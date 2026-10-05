@@ -8,7 +8,7 @@
  *   - <body data-html-base="../..">  → relative prefix back to html/
  *   - [data-search-trigger]          → the header button
  *   - [data-search-dialog]           → the overlay (hidden until opened)
- *   - _assets/aps-search-index.js    → window.__APS_SEARCH__ = [{p,t,h,s,g,x}]
+ *   - assets/aps-search-index.js    → window.__APS_SEARCH__ = [{p,t,h,s,g,x}]
  */
 (function () {
     'use strict';
@@ -39,7 +39,7 @@
         if (loading) return;
         loading = true;
         var script = document.createElement('script');
-        script.src = base + '_assets/aps-search-index.js';
+        script.src = base + 'assets/aps-search-index.js';
         script.onload = function () {
             docs = window.__APS_SEARCH__ || [];
             loading = false;
