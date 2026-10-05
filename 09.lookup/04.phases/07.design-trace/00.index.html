@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design trace (optional) — interface design | APS — Agentic PM Standard</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,slnt,wdth,wght,ROND@8..144,-10..0,25..150,400..700,0..100&amp;display=swap">
+    <link rel="stylesheet" href="../../../_assets/aps-antigravity.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" media="(prefers-color-scheme: light)">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" media="(prefers-color-scheme: dark)">
+    
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+</head>
+<body class="page" data-has-sidebar data-active-section="09.lookup" data-html-base="../../../">
+    <a class="sl-skip-link" href="#main-content">Skip to content</a>
+    <header class="header">
+        <div class="header-stack">
+            <div class="header-main">
+                <div class="title-wrapper">
+                    <a class="site-title" href="../../../00.start/00.index.html"><span class="site-title-mark">APS</span> Agentic PM Standard</a>
+                </div>
+                <div class="search-wrapper">
+                    <button type="button" class="search-trigger" data-search-trigger aria-haspopup="dialog" aria-controls="aps-search-dialog">
+                        <span class="search-trigger-label">Search</span>
+                        <span class="search-trigger-keys"><kbd>Ctrl</kbd><kbd>K</kbd></span>
+                    </button>
+                </div>
+                <div class="header-actions">
+                    <button type="button" class="sidebar-mobile-toggle" aria-expanded="false" aria-controls="sidebar" data-sidebar-toggle>
+                        <span class="sidebar-mobile-toggle-label">Menu</span>
+                    </button>
+                    <div class="theme-select" role="group" aria-label="Theme">
+                        <button type="button" data-theme-pick="dark">Dark</button>
+                        <button type="button" data-theme-pick="light">Light</button>
+                        <button type="button" data-theme-pick="auto" class="is-active">Auto</button>
+                    </div>
+                    <a class="header-link" href="../../../00.start/08.glossary.html" title="Key APS terms (~3 min)">Glossary</a>
+                    <a class="header-link" href="../../../00.index.html">md index</a>
+                </div>
+            </div>
+            <div class="subnav-bar" aria-label="Pack sections">
+        <div class="subnav-container">
+            <div class="subnav-left"><a class="subnav-pill" href="../../../00.start/00.index.html">Start</a><span class="subnav-divider" aria-hidden="true"></span><a class="subnav-pill" href="../../../01.flow/00.index.html">Flow</a><a class="subnav-pill" href="../../../02.gate/00.index.html">Gate</a><a class="subnav-pill" href="../../../03.factory/00.index.html">Factory</a><span class="subnav-divider" aria-hidden="true"></span><a class="subnav-pill" href="../../../04.playbooks/00.index.html">Playbooks</a><a class="subnav-pill" href="../../../05.failure/00.index.html">Failure</a><span class="subnav-divider" aria-hidden="true"></span><a class="subnav-pill" href="../../../06.laws/00.index.html">Laws</a><a class="subnav-pill" href="../../../07.templates/00.index.html">Templates</a><a class="subnav-pill" href="../../../08.platform/00.index.html">Platform</a><span class="subnav-divider" aria-hidden="true"></span><a class="subnav-pill active" href="../../../09.lookup/00.index.html">Lookup</a></div>
+        </div>
+    </div>
+        </div>
+    </header>
+    <div class="page-body">
+        <div class="sidebar-backdrop" data-sidebar-backdrop hidden></div>
+        <nav class="sidebar" aria-label="Pack navigation">
+            <div class="sidebar-pane" id="sidebar">
+                <div class="sidebar-content">
+                    <ul class="sl-sidebar-list"><li class="sidebar-hub" aria-label="Section shortcuts">
+        <p class="sidebar-hub-title">Lookup</p>
+        <div class="sidebar-hub-links">
+            <a class="nav-item nav-hub nav-hub-primary" href="../../../00.start/00.index.html">Decision board</a>
+            <a class="nav-item nav-hub" href="../../../09.lookup/00.index.html">Section index</a>
+            <a class="nav-item nav-hub" href="../../../00.start/01.story-spine.html">Story spine</a>
+            <a class="nav-item nav-hub nav-hub-muted" href="../../../00.index.html">Markdown hub</a>
+        </div>
+    </li><li class="nav-folder" data-nav-id="09.lookup/01.meta"><button type="button" class="folder-toggle" aria-expanded="false"><svg class="chevron" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 0 1 0-1.06Z"/></svg><span>Meta</span></button><ul class="nav-sub-tree"><li><a href="../../../09.lookup/01.meta/00.index.html" class="nav-item">Meta shards — SDLC object model</a></li><li><a href="../../../09.lookup/01.meta/01.folder-landscape.html" class="nav-item nav-item-rich"><span class="nav-num">01</span><span class="nav-label">Folder landscape — `{doc_root}` and `{wbs}`</span></a></li><li><a href="../../../09.lookup/01.meta/02.lifecycle-eight-stages.html" class="nav-item nav-item-rich"><span class="nav-num">02</span><span class="nav-label">Eight product stages (+ QC execute + HIL closure)</span></a></li><li><a href="../../../09.lookup/01.meta/03.domain-increment.html" class="nav-item nav-item-rich"><span class="nav-num">03</span><span class="nav-label">Domain increment — bounded context placement</span></a></li><li><a href="../../../09.lookup/01.meta/04.source-of-truth.html" class="nav-item nav-item-rich"><span class="nav-num">04</span><span class="nav-label">Source of truth — precedence</span></a></li><li><a href="../../../09.lookup/01.meta/05.operating-model-map.html" class="nav-item nav-item-rich"><span class="nav-num">05</span><span class="nav-label">Operating model — topic map (portable)</span></a></li></ul></li><li class="nav-folder" data-nav-id="09.lookup/02.wbs"><button type="button" class="folder-toggle" aria-expanded="false"><svg class="chevron" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 0 1 0-1.06Z"/></svg><span>WBS</span></button><ul class="nav-sub-tree"><li><a href="../../../09.lookup/02.wbs/00.index.html" class="nav-item">WBS — work breakdown</a></li><li><a href="../../../09.lookup/02.wbs/01.level-files.html" class="nav-item nav-item-rich"><span class="nav-num">01</span><span class="nav-label">WBS level files — required sections</span></a></li><li><a href="../../../09.lookup/02.wbs/02.hierarchy-and-trace.html" class="nav-item nav-item-rich"><span class="nav-num">02</span><span class="nav-label">WBS hierarchy and trace</span></a></li><li><a href="../../../09.lookup/02.wbs/03.atomic-subtask-law.html" class="nav-item nav-item-rich"><span class="nav-num">03</span><span class="nav-label">Atomic subtask law</span></a></li><li><a href="../../../09.lookup/02.wbs/04.coverage-registry.html" class="nav-item nav-item-rich"><span class="nav-num">04</span><span class="nav-label">Coverage registry and epic quality gate</span></a></li><li><a href="../../../09.lookup/02.wbs/05.task-slice-packet.html" class="nav-item nav-item-rich"><span class="nav-num">05</span><span class="nav-label">Task slice packet — files in `05.tasks/{service}/{slice}/`</span></a></li></ul></li><li class="nav-folder" data-nav-id="09.lookup/03.tracker"><button type="button" class="folder-toggle" aria-expanded="false"><svg class="chevron" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 0 1 0-1.06Z"/></svg><span>Tracker</span></button><ul class="nav-sub-tree"><li><a href="../../../09.lookup/03.tracker/00.index.html" class="nav-item">Tracker system — index (Epic → Story → Subtask)</a></li><li><a href="../../../09.lookup/03.tracker/01.hierarchy-and-flow.html" class="nav-item nav-item-rich"><span class="nav-num">01</span><span class="nav-label">Tracker hierarchy and flow</span></a></li><li><a href="../../../09.lookup/03.tracker/02.link-types-blocks-relates.html" class="nav-item nav-item-rich"><span class="nav-num">02</span><span class="nav-label">Entity links — blocks · is blocked by · relates</span></a></li><li><a href="../../../09.lookup/03.tracker/03.board-diagram-law.html" class="nav-item nav-item-rich"><span class="nav-num">03</span><span class="nav-label">Board diagram law — ticket maps</span></a></li><li><a href="../../../09.lookup/03.tracker/04.epic-ticket-matrix.html" class="nav-item nav-item-rich"><span class="nav-num">04</span><span class="nav-label">Epic ticket matrix standard</span></a></li><li><a href="../../../09.lookup/03.tracker/05.story-subtask-wbs-dual-plane.html" class="nav-item nav-item-rich"><span class="nav-num">05</span><span class="nav-label">Story subtask WBS — dual plane (Artifact vs Jira)</span></a></li><li><a href="../../../09.lookup/03.tracker/06.story-status-rollup.html" class="nav-item nav-item-rich"><span class="nav-num">06</span><span class="nav-label">Story status rollup from subtasks</span></a></li><li><a href="../../../09.lookup/03.tracker/07.labels-and-quartet.html" class="nav-item nav-item-rich"><span class="nav-num">07</span><span class="nav-label">Labels and TDD quartet</span></a></li><li><a href="../../../09.lookup/03.tracker/08.master-registry.html" class="nav-item nav-item-rich"><span class="nav-num">08</span><span class="nav-label">Master registry — keys ↔ WBS</span></a></li><li><a href="../../../09.lookup/03.tracker/09.program-spine.html" class="nav-item nav-item-rich"><span class="nav-num">09</span><span class="nav-label">Program spine — cross-epic topology</span></a></li><li><a href="../../../09.lookup/03.tracker/10.sync-after-tracker-change.html" class="nav-item nav-item-rich"><span class="nav-num">10</span><span class="nav-label">Sync order after tracker create or transition</span></a></li></ul></li><li class="nav-folder" data-nav-id="09.lookup/04.phases"><button type="button" class="folder-toggle" aria-expanded="false"><svg class="chevron" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 0 1 0-1.06Z"/></svg><span>Phases</span></button><ul class="nav-sub-tree"><li><a href="../../../09.lookup/04.phases/00.index.html" class="nav-item">SDLC phases</a></li><li class="nav-folder" data-nav-id="09.lookup/04.phases/01.requirements"><button type="button" class="folder-toggle" aria-expanded="false"><svg class="chevron" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 0 1 0-1.06Z"/></svg><span>Requirements</span></button><ul class="nav-sub-tree"><li><a href="../../../09.lookup/04.phases/01.requirements/00.index.html" class="nav-item">Requirements phase</a></li><li><a href="../../../09.lookup/04.phases/01.requirements/01.trace-to-analysis.html" class="nav-item nav-item-rich"><span class="nav-num">01</span><span class="nav-label">Requirements → analysis trace</span></a></li></ul></li><li class="nav-folder" data-nav-id="09.lookup/04.phases/02.analysis"><button type="button" class="folder-toggle" aria-expanded="false"><svg class="chevron" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 0 1 0-1.06Z"/></svg><span>Analysis</span></button><ul class="nav-sub-tree"><li><a href="../../../09.lookup/04.phases/02.analysis/00.index.html" class="nav-item">Analysis phase</a></li><li><a href="../../../09.lookup/04.phases/02.analysis/01.scenario-standard.html" class="nav-item nav-item-rich"><span class="nav-num">01</span><span class="nav-label">QC scenario standard (normative columns)</span></a></li><li><a href="../../../09.lookup/04.phases/02.analysis/02.quality-control-folder.html" class="nav-item nav-item-rich"><span class="nav-num">02</span><span class="nav-label">Quality control folder — layout</span></a></li></ul></li><li class="nav-folder" data-nav-id="09.lookup/04.phases/03.architecture"><button type="button" class="folder-toggle" aria-expanded="false"><svg class="chevron" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 0 1 0-1.06Z"/></svg><span>Architecture</span></button><ul class="nav-sub-tree"><li><a href="../../../09.lookup/04.phases/03.architecture/00.index.html" class="nav-item">Architecture phase</a></li><li><a href="../../../09.lookup/04.phases/03.architecture/01.c4-and-contract-gates.html" class="nav-item nav-item-rich"><span class="nav-num">01</span><span class="nav-label">C4 and contract gates (stages 4–5)</span></a></li></ul></li><li class="nav-folder" data-nav-id="09.lookup/04.phases/04.qc-lane"><button type="button" class="folder-toggle" aria-expanded="false"><svg class="chevron" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 0 1 0-1.06Z"/></svg><span>QC lane</span></button><ul class="nav-sub-tree"><li><a href="../../../09.lookup/04.phases/04.qc-lane/00.index.html" class="nav-item">QC lane — Plane B′</a></li><li><a href="../../../09.lookup/04.phases/04.qc-lane/01.trigger-matrix.html" class="nav-item nav-item-rich"><span class="nav-num">01</span><span class="nav-label">QC trigger matrix — when B′ runs</span></a></li><li><a href="../../../09.lookup/04.phases/04.qc-lane/02.execute-checklist.html" class="nav-item nav-item-rich"><span class="nav-num">02</span><span class="nav-label">QC execute checklist (Plane B′)</span></a></li></ul></li><li class="nav-folder" data-nav-id="09.lookup/04.phases/05.delivery"><button type="button" class="folder-toggle" aria-expanded="false"><svg class="chevron" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 0 1 0-1.06Z"/></svg><span>Delivery</span></button><ul class="nav-sub-tree"><li><a href="../../../09.lookup/04.phases/05.delivery/00.index.html" class="nav-item">Delivery closure — Plane C</a></li><li><a href="../../../09.lookup/04.phases/05.delivery/01.closure-shards.html" class="nav-item nav-item-rich"><span class="nav-num">01</span><span class="nav-label">Delivery closure shards</span></a></li></ul></li><li class="nav-folder" data-nav-id="09.lookup/04.phases/06.agent-native"><button type="button" class="folder-toggle" aria-expanded="false"><svg class="chevron" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 0 1 0-1.06Z"/></svg><span>Agent-native</span></button><ul class="nav-sub-tree"><li><a href="../../../09.lookup/04.phases/06.agent-native/00.index.html" class="nav-item">Agent-native delivery — sessions</a></li><li><a href="../../../09.lookup/04.phases/06.agent-native/01.grilling-checklist.html" class="nav-item nav-item-rich"><span class="nav-num">01</span><span class="nav-label">Grilling checklist (before WBS)</span></a></li><li><a href="../../../09.lookup/04.phases/06.agent-native/02.bind-verify-save.html" class="nav-item nav-item-rich"><span class="nav-num">02</span><span class="nav-label">BIND · verify · save (session chain)</span></a></li></ul></li><li class="nav-folder" data-nav-id="09.lookup/04.phases/07.design-trace"><button type="button" class="folder-toggle" aria-expanded="false"><svg class="chevron" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 0 1 0-1.06Z"/></svg><span>Design trace</span></button><ul class="nav-sub-tree"><li><a href="../../../09.lookup/04.phases/07.design-trace/00.index.html" class="nav-item">Design trace (optional) — interface design</a></li></ul></li></ul></li></ul>
+                </div>
+            </div>
+        </nav>
+        <div class="main-frame">
+            <main id="main-content" class="main-pane" tabindex="-1">
+                <div class="sl-container">
+                    <nav class="doc-breadcrumb" aria-label="Breadcrumb"><ol><li><a href="../../../00.start/00.index.html">APS</a></li><li><a href="../../../09.lookup/00.index.html">Lookup</a></li><li><span class="breadcrumb-muted">Phases</span></li><li><span class="breadcrumb-muted">Design Trace</span></li><li class="breadcrumb-current" aria-current="page">Design trace (optional) — interface design</li></ol></nav>
+                    <article class="sl-markdown-content"><h1>Design trace (optional) — interface design</h1>
+<p><strong>Stage 4 adjunct</strong> when the slice ships UI. API-first slices may mark <strong>N/A</strong> without blocking READY if HTTP + AC are bound.</p>
+<p><strong>Path:</strong> <code>{doc_root}/07.interface-design/{nn}.{slug}/</code></p>
+<table>
+<thead>
+<tr>
+<th>Artifact</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Page / flow map</td>
+<td>Screens ↔ US ↔ routes</td>
+</tr>
+<tr>
+<td>Component notes</td>
+<td>States: loading, empty, error</td>
+</tr>
+<tr>
+<td>Drift playbook</td>
+<td><a href="../../../04.playbooks/04.case-figma-ticket-drift.html">04.playbooks/04.case-figma-ticket-drift.md</a></td>
+</tr>
+</tbody></table>
+<p>FIP packet cites design shards on plane C when present.</p>
+<p><strong>Not</strong> a second requirements tree — trace to analysis US and QC matrix for UI SCNs.</p>
+<p>Parent: <a href="../00.index.html">../00.index.md</a></p>
+</article>
+                    <nav class="page-nav-footer" aria-label="Pages in this section"><a class="page-nav-link page-nav-prev" href="../../../09.lookup/04.phases/06.agent-native/02.bind-verify-save.html"><span class="page-nav-kicker">Previous</span><span class="page-nav-title">02 BIND · verify · save (session chain)</span></a><span class="page-nav-spacer"></span></nav>
+                </div>
+            </main>
+            
+        </div>
+    </div>
+    <div class="aps-search-dialog" id="aps-search-dialog" data-search-dialog hidden role="dialog" aria-modal="true" aria-label="Search the APS wiki">
+        <div class="aps-search-panel">
+            <div class="aps-search-field">
+                <input type="search" data-search-input class="aps-search-input" placeholder="Search the pack — try “REWORK”, “Plane B”, “auto-ready”…" autocomplete="off" spellcheck="false" aria-label="Search query">
+                <kbd class="aps-search-esc">Esc</kbd>
+            </div>
+            <ul class="aps-search-results" data-search-results></ul>
+            <p class="aps-search-empty" data-search-empty hidden></p>
+            <p class="aps-search-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+        </div>
+    </div>
+    <script src="../../../_assets/aps-search.js" defer></script>
+    <script>
+        (function initTheme() {
+            const key = 'aps-docs-theme';
+            const root = document.documentElement;
+            function apply(mode) {
+                document.querySelectorAll('[data-theme-pick]').forEach((btn) => {
+                    btn.classList.toggle('is-active', btn.getAttribute('data-theme-pick') === mode);
+                });
+                if (mode === 'auto') {
+                    root.removeAttribute('data-theme');
+                } else {
+                    root.setAttribute('data-theme', mode);
+                }
+                try { localStorage.setItem(key, mode); } catch (_) {}
+            }
+            let saved = 'auto';
+            try { saved = localStorage.getItem(key) || 'auto'; } catch (_) {}
+            apply(saved);
+            document.querySelectorAll('[data-theme-pick]').forEach((btn) => {
+                btn.addEventListener('click', () => apply(btn.getAttribute('data-theme-pick') || 'auto'));
+            });
+        })();
+
+        
+        mermaid.initialize({
+            startOnLoad: false,
+            theme: 'dark',
+            securityLevel: 'loose',
+            flowchart: {
+                htmlLabels: true,
+                curve: 'basis',
+                useMaxWidth: false,
+                padding: 16,
+                nodeSpacing: 40,
+                rankSpacing: 72,
+                diagramPadding: 16
+            },
+            sequence: { useMaxWidth: false, diagramMarginX: 40, diagramMarginY: 20, actorMargin: 50, boxMargin: 10 },
+            er: { useMaxWidth: false },
+            gantt: { useMaxWidth: false },
+            journey: { useMaxWidth: false },
+            timeline: { useMaxWidth: false },
+            class: { useMaxWidth: false },
+            state: { useMaxWidth: false },
+            pie: { useMaxWidth: false },
+            mindmap: { useMaxWidth: false }
+        });
+
+        async function renderMermaid() {
+            const nodes = [...document.querySelectorAll('pre.mermaid')];
+            for (const el of nodes) {
+                const code = (el.textContent || '').trim();
+                if (!code) continue;
+                try {
+                    const id = 'mmd-' + Math.random().toString(36).slice(2);
+                    const { svg } = await mermaid.render(id, code);
+
+                    const stage = document.createElement('div');
+                    stage.className = 'mermaid-stage';
+
+                    const toolbar = document.createElement('div');
+                    toolbar.className = 'mermaid-toolbar';
+                    toolbar.innerHTML = [
+                        '<button type="button" data-act="zoom-out" title="Zoom out">−</button>',
+                        '<input class="zoom-input" type="number" min="5" max="500" step="5" value="100" title="Type zoom % then Enter" aria-label="Zoom percent">',
+                        '<span class="zoom-suffix">%</span>',
+                        '<button type="button" data-act="zoom-in" title="Zoom in">+</button>',
+                        '<button type="button" data-act="reset" title="Reset view">⟲</button>',
+                        '<button type="button" data-act="fullscreen" title="Fullscreen">⛶</button>'
+                    ].join('');
+
+                    const hint = document.createElement('div');
+                    hint.className = 'mermaid-hint';
+                    hint.textContent = 'Scroll zoom · Drag pan · Type % · ⛶ fullscreen';
+
+                    const viewport = document.createElement('div');
+                    viewport.className = 'mermaid-viewport';
+
+                    const wrap = document.createElement('div');
+                    wrap.className = 'mermaid';
+                    wrap.innerHTML = svg;
+                    const svgEl = wrap.querySelector('svg');
+                    if (svgEl) {
+                        svgEl.removeAttribute('height');
+                        svgEl.style.maxWidth = 'none';
+                        svgEl.style.height = 'auto';
+                    }
+
+                    viewport.appendChild(wrap);
+                    stage.appendChild(toolbar);
+                    stage.appendChild(hint);
+                    stage.appendChild(viewport);
+                    el.replaceWith(stage);
+
+                    const pz = Panzoom(wrap, {
+                        maxScale: 5,
+                        minScale: 0.05,
+                        cursor: 'grab'
+                    });
+                    viewport.addEventListener('wheel', pz.zoomWithWheel);
+                    const zoomInput = toolbar.querySelector('.zoom-input');
+                    let syncing = false;
+                    const syncZoom = () => {
+                        if (!zoomInput || syncing) return;
+                        syncing = true;
+                        zoomInput.value = String(Math.round(pz.getScale() * 100));
+                        syncing = false;
+                    };
+                    const applyZoomPct = () => {
+                        if (!zoomInput) return;
+                        let pct = Number(zoomInput.value);
+                        if (!Number.isFinite(pct)) pct = 100;
+                        pct = Math.min(500, Math.max(5, Math.round(pct)));
+                        zoomInput.value = String(pct);
+                        pz.zoom(pct / 100, { animate: true });
+                    };
+                    zoomInput.addEventListener('keydown', (ev) => {
+                        if (ev.key === 'Enter') {
+                            ev.preventDefault();
+                            applyZoomPct();
+                            zoomInput.blur();
+                        }
+                        ev.stopPropagation();
+                    });
+                    zoomInput.addEventListener('change', applyZoomPct);
+                    zoomInput.addEventListener('click', (ev) => {
+                        ev.stopPropagation();
+                        zoomInput.select();
+                    });
+                    wrap.addEventListener('panzoomchange', syncZoom);
+                    toolbar.addEventListener('click', (ev) => {
+                        const btn = ev.target.closest('button[data-act]');
+                        if (!btn) return;
+                        const act = btn.dataset.act;
+                        if (act === 'zoom-in') pz.zoomIn();
+                        if (act === 'zoom-out') pz.zoomOut();
+                        if (act === 'reset') { pz.reset(); syncZoom(); }
+                        if (act === 'fullscreen') {
+                            const on = stage.classList.toggle('is-fullscreen');
+                            btn.title = on ? 'Exit fullscreen (Esc)' : 'Fullscreen';
+                            btn.textContent = on ? '✕' : '⛶';
+                            document.body.style.overflow = on ? 'hidden' : '';
+                            requestAnimationFrame(() => pz.reset());
+                        }
+                        syncZoom();
+                    });
+                    document.addEventListener('keydown', (ev) => {
+                        if (ev.key === 'Escape' && stage.classList.contains('is-fullscreen')) {
+                            stage.classList.remove('is-fullscreen');
+                            const fsBtn = toolbar.querySelector('[data-act="fullscreen"]');
+                            if (fsBtn) { fsBtn.textContent = '⛶'; fsBtn.title = 'Fullscreen'; }
+                            document.body.style.overflow = '';
+                            requestAnimationFrame(() => pz.reset());
+                        }
+                    });
+                } catch (err) {
+                    el.classList.add('mermaid-error');
+                    el.textContent = 'Mermaid error: ' + (err && err.message ? err.message : String(err)) + '\n\n' + code;
+                    console.error('Mermaid failed:', err);
+                }
+            }
+        }
+    
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            await renderMermaid();
+            document.querySelectorAll('.code-panel .code-copy').forEach((btn) => {
+                btn.addEventListener('click', async () => {
+                    const panel = btn.closest('.code-panel');
+                    const codeEl = panel?.querySelector('code');
+                    const text = codeEl?.textContent || '';
+                    try {
+                        await navigator.clipboard.writeText(text);
+                        btn.textContent = 'Copied';
+                        btn.classList.add('is-copied');
+                        setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('is-copied'); }, 1400);
+                    } catch {
+                        btn.textContent = 'Failed';
+                        setTimeout(() => { btn.textContent = 'Copy'; }, 1400);
+                    }
+                });
+            });
+            const sidebar = document.getElementById('sidebar');
+            const STORAGE_KEY = 'aps-nav-open';
+            const currentUrl = new URL(window.location.href);
+            function loadOpenSet() {
+                try { return new Set(JSON.parse(sessionStorage.getItem(STORAGE_KEY) || '[]')); }
+                catch { return new Set(); }
+            }
+            function saveOpenSet(set) {
+                sessionStorage.setItem(STORAGE_KEY, JSON.stringify([...set]));
+            }
+            let openSet = loadOpenSet();
+            function setOpen(folder, open) {
+                const id = folder.dataset.navId;
+                folder.classList.toggle('open', open);
+                folder.querySelector('.folder-toggle')?.setAttribute('aria-expanded', open ? 'true' : 'false');
+                if (open) openSet.add(id); else openSet.delete(id);
+                saveOpenSet(openSet);
+            }
+            document.querySelectorAll('.nav-folder[data-nav-id]').forEach((folder) => {
+                if (openSet.has(folder.dataset.navId)) setOpen(folder, true);
+            });
+            document.querySelectorAll('.nav-folder[data-nav-default-open]').forEach((folder) => {
+                setOpen(folder, true);
+            });
+            document.querySelectorAll('.folder-toggle').forEach((btn) => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const folder = btn.closest('.nav-folder');
+                    setOpen(folder, !folder.classList.contains('open'));
+                });
+            });
+            document.querySelectorAll('.nav-item').forEach((link) => {
+                const linkUrl = new URL(link.href);
+                if (currentUrl.pathname === linkUrl.pathname) {
+                    link.classList.add('active');
+                    link.setAttribute('aria-current', 'page');
+                    let parent = link.closest('.nav-folder');
+                    while (parent) {
+                        setOpen(parent, true);
+                        parent = parent.parentElement?.closest('.nav-folder');
+                    }
+                    link.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+                }
+            });
+            if (sidebar) {
+                const saved = sessionStorage.getItem('sb-scroll');
+                if (saved) sidebar.scrollTop = parseInt(saved, 10);
+                sidebar.onscroll = () => sessionStorage.setItem('sb-scroll', String(sidebar.scrollTop));
+            }
+
+            const backdrop = document.querySelector('[data-sidebar-backdrop]');
+            const toggle = document.querySelector('[data-sidebar-toggle]');
+            function setMobileNav(open) {
+                document.body.classList.toggle('sidebar-mobile-open', open);
+                toggle?.setAttribute('aria-expanded', open ? 'true' : 'false');
+                if (backdrop) backdrop.hidden = !open;
+            }
+            toggle?.addEventListener('click', () => {
+                setMobileNav(!document.body.classList.contains('sidebar-mobile-open'));
+            });
+            backdrop?.addEventListener('click', () => setMobileNav(false));
+            document.querySelectorAll('.sidebar .nav-item').forEach((link) => {
+                link.addEventListener('click', () => {
+                    if (window.matchMedia('(max-width: 49.99rem)').matches) setMobileNav(false);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

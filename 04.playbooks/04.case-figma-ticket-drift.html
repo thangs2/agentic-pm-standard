@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13 — Case: Figma / Penpot ↔ ticket drift | APS — Agentic PM Standard</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,slnt,wdth,wght,ROND@8..144,-10..0,25..150,400..700,0..100&amp;display=swap">
+    <link rel="stylesheet" href="../_assets/aps-antigravity.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" media="(prefers-color-scheme: light)">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" media="(prefers-color-scheme: dark)">
+    
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+</head>
+<body class="page has-toc" data-has-sidebar data-active-section="04.playbooks" data-html-base="../">
+    <a class="sl-skip-link" href="#main-content">Skip to content</a>
+    <header class="header">
+        <div class="header-stack">
+            <div class="header-main">
+                <div class="title-wrapper">
+                    <a class="site-title" href="../00.start/00.index.html"><span class="site-title-mark">APS</span> Agentic PM Standard</a>
+                </div>
+                <div class="search-wrapper">
+                    <button type="button" class="search-trigger" data-search-trigger aria-haspopup="dialog" aria-controls="aps-search-dialog">
+                        <span class="search-trigger-label">Search</span>
+                        <span class="search-trigger-keys"><kbd>Ctrl</kbd><kbd>K</kbd></span>
+                    </button>
+                </div>
+                <div class="header-actions">
+                    <button type="button" class="sidebar-mobile-toggle" aria-expanded="false" aria-controls="sidebar" data-sidebar-toggle>
+                        <span class="sidebar-mobile-toggle-label">Menu</span>
+                    </button>
+                    <div class="theme-select" role="group" aria-label="Theme">
+                        <button type="button" data-theme-pick="dark">Dark</button>
+                        <button type="button" data-theme-pick="light">Light</button>
+                        <button type="button" data-theme-pick="auto" class="is-active">Auto</button>
+                    </div>
+                    <a class="header-link" href="../00.start/08.glossary.html" title="Key APS terms (~3 min)">Glossary</a>
+                    <a class="header-link" href="../00.index.html">md index</a>
+                </div>
+            </div>
+            <div class="subnav-bar" aria-label="Pack sections">
+        <div class="subnav-container">
+            <div class="subnav-left"><a class="subnav-pill" href="../00.start/00.index.html">Start</a><span class="subnav-divider" aria-hidden="true"></span><a class="subnav-pill" href="../01.flow/00.index.html">Flow</a><a class="subnav-pill" href="../02.gate/00.index.html">Gate</a><a class="subnav-pill" href="../03.factory/00.index.html">Factory</a><span class="subnav-divider" aria-hidden="true"></span><a class="subnav-pill active" href="../04.playbooks/00.index.html">Playbooks</a><a class="subnav-pill" href="../05.failure/00.index.html">Failure</a><span class="subnav-divider" aria-hidden="true"></span><a class="subnav-pill" href="../06.laws/00.index.html">Laws</a><a class="subnav-pill" href="../07.templates/00.index.html">Templates</a><a class="subnav-pill" href="../08.platform/00.index.html">Platform</a><span class="subnav-divider" aria-hidden="true"></span><a class="subnav-pill" href="../09.lookup/00.index.html">Lookup</a></div>
+        </div>
+    </div>
+        </div>
+    </header>
+    <div class="page-body">
+        <div class="sidebar-backdrop" data-sidebar-backdrop hidden></div>
+        <nav class="sidebar" aria-label="Pack navigation">
+            <div class="sidebar-pane" id="sidebar">
+                <div class="sidebar-content">
+                    <ul class="sl-sidebar-list"><li class="sidebar-hub" aria-label="Section shortcuts">
+        <p class="sidebar-hub-title">Playbooks</p>
+        <div class="sidebar-hub-links">
+            <a class="nav-item nav-hub nav-hub-primary" href="../00.start/00.index.html">Decision board</a>
+            <a class="nav-item nav-hub" href="../04.playbooks/00.index.html">Section index</a>
+            <a class="nav-item nav-hub" href="../00.start/01.story-spine.html">Story spine</a>
+            <a class="nav-item nav-hub nav-hub-muted" href="../00.index.html">Markdown hub</a>
+        </div>
+    </li><li class="nav-folder open" data-nav-id="04.playbooks/__aps_cases__" data-nav-default-open="true"><button type="button" class="folder-toggle" aria-expanded="true"><svg class="chevron" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 0 1 0-1.06Z"/></svg><span>Case studies</span></button><ul class="nav-sub-tree"><li><a href="../04.playbooks/01.case-document-intake-verify.html" class="nav-item nav-item-rich"><span class="nav-num">01</span><span class="nav-label">document intake and verify (requirements)</span></a></li><li><a href="../04.playbooks/02.case-jira-hierarchy-quality.html" class="nav-item nav-item-rich"><span class="nav-num">02</span><span class="nav-label">Jira hierarchy quality (feature → epic → task)</span></a></li><li><a href="../04.playbooks/03.case-meet-to-ready.html" class="nav-item nav-item-rich"><span class="nav-num">03</span><span class="nav-label">Meet → MoM → draft tickets (not auto-Ready)</span></a></li><li><a href="../04.playbooks/04.case-figma-ticket-drift.html" class="nav-item nav-item-rich"><span class="nav-num">04</span><span class="nav-label">Figma / Penpot ↔ ticket drift</span></a></li><li><a href="../04.playbooks/05.case-sot-conflict.html" class="nav-item nav-item-rich"><span class="nav-num">05</span><span class="nav-label">source-of-truth conflict (Drive vs Confluence vs Notion)</span></a></li><li><a href="../04.playbooks/06.case-pr-ci-vs-ticket.html" class="nav-item nav-item-rich"><span class="nav-num">06</span><span class="nav-label">PR / CI vs Jira ticket (Dev plane)</span></a></li><li><a href="../04.playbooks/07.case-status-pack.html" class="nav-item nav-item-rich"><span class="nav-num">07</span><span class="nav-label">honest status pack (leads)</span></a></li><li><a href="../04.playbooks/08.case-dependency-blocked.html" class="nav-item nav-item-rich"><span class="nav-num">08</span><span class="nav-label">cross-pod dependency and Blocked</span></a></li><li><a href="../04.playbooks/09.case-mid-sprint-change.html" class="nav-item nav-item-rich"><span class="nav-num">09</span><span class="nav-label">mid-sprint change request</span></a></li><li><a href="../04.playbooks/10.case-data-sql-excel-report.html" class="nav-item nav-item-rich"><span class="nav-num">10</span><span class="nav-label">SQL / Excel / CSV reports</span></a></li><li><a href="../04.playbooks/11.case-sow-assessment-vs-backlog.html" class="nav-item nav-item-rich"><span class="nav-num">11</span><span class="nav-label">SoW / assessment vs backlog</span></a></li><li><a href="../04.playbooks/12.case-dod-evidence.html" class="nav-item nav-item-rich"><span class="nav-num">12</span><span class="nav-label">Definition of Done and evidence</span></a></li><li><a href="../04.playbooks/13.case-dontpassmessage.html" class="nav-item nav-item-rich"><span class="nav-num">13</span><span class="nav-label">DontPassMessage (raw ping → usable packet)</span></a></li><li><a href="../04.playbooks/14.case-weekly-blocked-scan.html" class="nav-item nav-item-rich"><span class="nav-num">14</span><span class="nav-label">weekly blocked / risk scan (HITL agent)</span></a></li><li><a href="../04.playbooks/15.case-auto-ready-vs-pm-exception.html" class="nav-item nav-item-rich"><span class="nav-num">15</span><span class="nav-label">auto-Ready vs PM exception vs bounce-to-sender</span></a></li><li><a href="../04.playbooks/16.case-spike-timebox.html" class="nav-item nav-item-rich"><span class="nav-num">16</span><span class="nav-label">spike (unknown how, timeboxed)</span></a></li><li><a href="../04.playbooks/17.case-dept-tradeoff.html" class="nav-item nav-item-rich"><span class="nav-num">17</span><span class="nav-label">two departments, one slot (`TRADEOFF`)</span></a></li><li><a href="../04.playbooks/18.case-incident-not-story.html" class="nav-item nav-item-rich"><span class="nav-num">18</span><span class="nav-label">live incident is not a Ready story</span></a></li></ul></li></ul>
+                </div>
+            </div>
+        </nav>
+        <div class="main-frame">
+            <main id="main-content" class="main-pane" tabindex="-1">
+                <div class="sl-container">
+                    <nav class="doc-breadcrumb" aria-label="Breadcrumb"><ol><li><a href="../00.start/00.index.html">APS</a></li><li><a href="../04.playbooks/00.index.html">Playbooks</a></li><li class="breadcrumb-current" aria-current="page">04 Figma / Penpot ↔ ticket drift</li></ol></nav>
+                    <article class="sl-markdown-content"><h1>13 — Case: Figma / Penpot ↔ ticket drift</h1>
+<h2 id="problem">Problem</h2>
+<p>BA/PO updates Figma / Penpot; Jira AC stays old (or the reverse). Pod builds the wrong thing.</p>
+<h2 id="trigger">Trigger</h2>
+<p>Figma / Penpot file version change on a linked node · ticket AC edit without design link · Review “this isn’t the frame”</p>
+<h2 id="departments">Departments</h2>
+<p>BA/PO, Design (if any), TDM, Pod (FE/analytics UI)</p>
+<h2 id="systems-/-mcp">Systems / MCP</h2>
+<p>Design + tracker MCP (<a href="../08.platform/05.mcp-connectors-map.html">map</a>) · RAG <code>col_design</code> + <code>col_jira</code> (<a href="../08.platform/07.rag-architecture.html">collections</a>)</p>
+<h2 id="components">Components</h2>
+<pre class="mermaid">flowchart LR
+  Fig[Figma / Penpot node] &lt;--&gt;|link| J[Jira story]
+  Fig --&gt; MCPF[mcp-figma / mcp-penpot]
+  J --&gt; MCPJ[mcp-jira]
+  MCPF --&gt; C[Cursor]
+  MCPJ --&gt; C
+  C --&gt; Drift[class design-drift]
+  Drift --&gt; PM[PM + BA]</pre>
+<h2 id="pipeline">Pipeline</h2>
+<ol>
+<li>Resolve <code>figma_url / penpot_url</code> / node id on ticket (G).</li>
+<li>Extract visible copy, filters, states from frames.</li>
+<li>Diff vs AC bullets.</li>
+<li>If frame newer than ticket <code>updated</code>: class <code>CONFLICT</code> reason <code>design-drift</code> (<a href="../02.gate/01.classification-and-gate.html">Gate</a>).</li>
+<li>PM+BA choose: update AC (cite frame version) <strong>or</strong> revert design <strong>or</strong> <code>SPIKE</code> (<a href="16.case-spike-timebox.html">25</a>).</li>
+<li>Comment both systems. Re-run case 11.</li>
+</ol>
+<h2 id="flow">Flow</h2>
+<pre class="mermaid">flowchart TD
+  A[Linked story] --&gt; B{AC cite frame version?}
+  B --&gt;|no| REWORK
+  B --&gt;|yes| C{Frame rev &gt; cited?}
+  C --&gt;|yes| Drift
+  C --&gt;|no| OK
+  Drift --&gt; Gate[PM/BA pick winner]</pre>
+<h2 id="solution">Solution</h2>
+<p>Design is a source, not the ticket. AC must <strong>cite frame version</strong>. Drift is class <code>CONFLICT</code> reason <code>design-drift</code>, not a silent rebuild.</p>
+<h2 id="related">Related</h2>
+<p><a href="../02.gate/01.classification-and-gate.html">Gate</a> <a href="02.case-jira-hierarchy-quality.html">11</a> <a href="05.case-sot-conflict.html">14</a> <a href="12.case-dod-evidence.html">21</a> <a href="16.case-spike-timebox.html">25</a></p>
+</article>
+                    <nav class="page-nav-footer" aria-label="Pages in this section"><a class="page-nav-link page-nav-prev" href="../04.playbooks/03.case-meet-to-ready.html"><span class="page-nav-kicker">Previous</span><span class="page-nav-title">03 Meet → MoM → draft tickets (not auto-Ready)</span></a><a class="page-nav-link page-nav-next" href="../04.playbooks/05.case-sot-conflict.html"><span class="page-nav-kicker">Next</span><span class="page-nav-title">05 source-of-truth conflict (Drive vs Confluence vs Notion)</span></a></nav>
+                </div>
+            </main>
+            <aside class="right-sidebar" aria-label="On this page">
+        <div class="right-sidebar-panel">
+            <h2>On this page</h2>
+            <ul class="right-sidebar-toc"><li class="toc-level-2"><a href="#problem">Problem</a></li><li class="toc-level-2"><a href="#trigger">Trigger</a></li><li class="toc-level-2"><a href="#departments">Departments</a></li><li class="toc-level-2"><a href="#systems-/-mcp">Systems / MCP</a></li><li class="toc-level-2"><a href="#components">Components</a></li><li class="toc-level-2"><a href="#pipeline">Pipeline</a></li><li class="toc-level-2"><a href="#flow">Flow</a></li><li class="toc-level-2"><a href="#solution">Solution</a></li><li class="toc-level-2"><a href="#related">Related</a></li></ul>
+        </div>
+    </aside>
+        </div>
+    </div>
+    <div class="aps-search-dialog" id="aps-search-dialog" data-search-dialog hidden role="dialog" aria-modal="true" aria-label="Search the APS wiki">
+        <div class="aps-search-panel">
+            <div class="aps-search-field">
+                <input type="search" data-search-input class="aps-search-input" placeholder="Search the pack — try “REWORK”, “Plane B”, “auto-ready”…" autocomplete="off" spellcheck="false" aria-label="Search query">
+                <kbd class="aps-search-esc">Esc</kbd>
+            </div>
+            <ul class="aps-search-results" data-search-results></ul>
+            <p class="aps-search-empty" data-search-empty hidden></p>
+            <p class="aps-search-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+        </div>
+    </div>
+    <script src="../_assets/aps-search.js" defer></script>
+    <script>
+        (function initTheme() {
+            const key = 'aps-docs-theme';
+            const root = document.documentElement;
+            function apply(mode) {
+                document.querySelectorAll('[data-theme-pick]').forEach((btn) => {
+                    btn.classList.toggle('is-active', btn.getAttribute('data-theme-pick') === mode);
+                });
+                if (mode === 'auto') {
+                    root.removeAttribute('data-theme');
+                } else {
+                    root.setAttribute('data-theme', mode);
+                }
+                try { localStorage.setItem(key, mode); } catch (_) {}
+            }
+            let saved = 'auto';
+            try { saved = localStorage.getItem(key) || 'auto'; } catch (_) {}
+            apply(saved);
+            document.querySelectorAll('[data-theme-pick]').forEach((btn) => {
+                btn.addEventListener('click', () => apply(btn.getAttribute('data-theme-pick') || 'auto'));
+            });
+        })();
+
+        
+        mermaid.initialize({
+            startOnLoad: false,
+            theme: 'dark',
+            securityLevel: 'loose',
+            flowchart: {
+                htmlLabels: true,
+                curve: 'basis',
+                useMaxWidth: false,
+                padding: 16,
+                nodeSpacing: 40,
+                rankSpacing: 72,
+                diagramPadding: 16
+            },
+            sequence: { useMaxWidth: false, diagramMarginX: 40, diagramMarginY: 20, actorMargin: 50, boxMargin: 10 },
+            er: { useMaxWidth: false },
+            gantt: { useMaxWidth: false },
+            journey: { useMaxWidth: false },
+            timeline: { useMaxWidth: false },
+            class: { useMaxWidth: false },
+            state: { useMaxWidth: false },
+            pie: { useMaxWidth: false },
+            mindmap: { useMaxWidth: false }
+        });
+
+        async function renderMermaid() {
+            const nodes = [...document.querySelectorAll('pre.mermaid')];
+            for (const el of nodes) {
+                const code = (el.textContent || '').trim();
+                if (!code) continue;
+                try {
+                    const id = 'mmd-' + Math.random().toString(36).slice(2);
+                    const { svg } = await mermaid.render(id, code);
+
+                    const stage = document.createElement('div');
+                    stage.className = 'mermaid-stage';
+
+                    const toolbar = document.createElement('div');
+                    toolbar.className = 'mermaid-toolbar';
+                    toolbar.innerHTML = [
+                        '<button type="button" data-act="zoom-out" title="Zoom out">−</button>',
+                        '<input class="zoom-input" type="number" min="5" max="500" step="5" value="100" title="Type zoom % then Enter" aria-label="Zoom percent">',
+                        '<span class="zoom-suffix">%</span>',
+                        '<button type="button" data-act="zoom-in" title="Zoom in">+</button>',
+                        '<button type="button" data-act="reset" title="Reset view">⟲</button>',
+                        '<button type="button" data-act="fullscreen" title="Fullscreen">⛶</button>'
+                    ].join('');
+
+                    const hint = document.createElement('div');
+                    hint.className = 'mermaid-hint';
+                    hint.textContent = 'Scroll zoom · Drag pan · Type % · ⛶ fullscreen';
+
+                    const viewport = document.createElement('div');
+                    viewport.className = 'mermaid-viewport';
+
+                    const wrap = document.createElement('div');
+                    wrap.className = 'mermaid';
+                    wrap.innerHTML = svg;
+                    const svgEl = wrap.querySelector('svg');
+                    if (svgEl) {
+                        svgEl.removeAttribute('height');
+                        svgEl.style.maxWidth = 'none';
+                        svgEl.style.height = 'auto';
+                    }
+
+                    viewport.appendChild(wrap);
+                    stage.appendChild(toolbar);
+                    stage.appendChild(hint);
+                    stage.appendChild(viewport);
+                    el.replaceWith(stage);
+
+                    const pz = Panzoom(wrap, {
+                        maxScale: 5,
+                        minScale: 0.05,
+                        cursor: 'grab'
+                    });
+                    viewport.addEventListener('wheel', pz.zoomWithWheel);
+                    const zoomInput = toolbar.querySelector('.zoom-input');
+                    let syncing = false;
+                    const syncZoom = () => {
+                        if (!zoomInput || syncing) return;
+                        syncing = true;
+                        zoomInput.value = String(Math.round(pz.getScale() * 100));
+                        syncing = false;
+                    };
+                    const applyZoomPct = () => {
+                        if (!zoomInput) return;
+                        let pct = Number(zoomInput.value);
+                        if (!Number.isFinite(pct)) pct = 100;
+                        pct = Math.min(500, Math.max(5, Math.round(pct)));
+                        zoomInput.value = String(pct);
+                        pz.zoom(pct / 100, { animate: true });
+                    };
+                    zoomInput.addEventListener('keydown', (ev) => {
+                        if (ev.key === 'Enter') {
+                            ev.preventDefault();
+                            applyZoomPct();
+                            zoomInput.blur();
+                        }
+                        ev.stopPropagation();
+                    });
+                    zoomInput.addEventListener('change', applyZoomPct);
+                    zoomInput.addEventListener('click', (ev) => {
+                        ev.stopPropagation();
+                        zoomInput.select();
+                    });
+                    wrap.addEventListener('panzoomchange', syncZoom);
+                    toolbar.addEventListener('click', (ev) => {
+                        const btn = ev.target.closest('button[data-act]');
+                        if (!btn) return;
+                        const act = btn.dataset.act;
+                        if (act === 'zoom-in') pz.zoomIn();
+                        if (act === 'zoom-out') pz.zoomOut();
+                        if (act === 'reset') { pz.reset(); syncZoom(); }
+                        if (act === 'fullscreen') {
+                            const on = stage.classList.toggle('is-fullscreen');
+                            btn.title = on ? 'Exit fullscreen (Esc)' : 'Fullscreen';
+                            btn.textContent = on ? '✕' : '⛶';
+                            document.body.style.overflow = on ? 'hidden' : '';
+                            requestAnimationFrame(() => pz.reset());
+                        }
+                        syncZoom();
+                    });
+                    document.addEventListener('keydown', (ev) => {
+                        if (ev.key === 'Escape' && stage.classList.contains('is-fullscreen')) {
+                            stage.classList.remove('is-fullscreen');
+                            const fsBtn = toolbar.querySelector('[data-act="fullscreen"]');
+                            if (fsBtn) { fsBtn.textContent = '⛶'; fsBtn.title = 'Fullscreen'; }
+                            document.body.style.overflow = '';
+                            requestAnimationFrame(() => pz.reset());
+                        }
+                    });
+                } catch (err) {
+                    el.classList.add('mermaid-error');
+                    el.textContent = 'Mermaid error: ' + (err && err.message ? err.message : String(err)) + '\n\n' + code;
+                    console.error('Mermaid failed:', err);
+                }
+            }
+        }
+    
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            await renderMermaid();
+            document.querySelectorAll('.code-panel .code-copy').forEach((btn) => {
+                btn.addEventListener('click', async () => {
+                    const panel = btn.closest('.code-panel');
+                    const codeEl = panel?.querySelector('code');
+                    const text = codeEl?.textContent || '';
+                    try {
+                        await navigator.clipboard.writeText(text);
+                        btn.textContent = 'Copied';
+                        btn.classList.add('is-copied');
+                        setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('is-copied'); }, 1400);
+                    } catch {
+                        btn.textContent = 'Failed';
+                        setTimeout(() => { btn.textContent = 'Copy'; }, 1400);
+                    }
+                });
+            });
+            const sidebar = document.getElementById('sidebar');
+            const STORAGE_KEY = 'aps-nav-open';
+            const currentUrl = new URL(window.location.href);
+            function loadOpenSet() {
+                try { return new Set(JSON.parse(sessionStorage.getItem(STORAGE_KEY) || '[]')); }
+                catch { return new Set(); }
+            }
+            function saveOpenSet(set) {
+                sessionStorage.setItem(STORAGE_KEY, JSON.stringify([...set]));
+            }
+            let openSet = loadOpenSet();
+            function setOpen(folder, open) {
+                const id = folder.dataset.navId;
+                folder.classList.toggle('open', open);
+                folder.querySelector('.folder-toggle')?.setAttribute('aria-expanded', open ? 'true' : 'false');
+                if (open) openSet.add(id); else openSet.delete(id);
+                saveOpenSet(openSet);
+            }
+            document.querySelectorAll('.nav-folder[data-nav-id]').forEach((folder) => {
+                if (openSet.has(folder.dataset.navId)) setOpen(folder, true);
+            });
+            document.querySelectorAll('.nav-folder[data-nav-default-open]').forEach((folder) => {
+                setOpen(folder, true);
+            });
+            document.querySelectorAll('.folder-toggle').forEach((btn) => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const folder = btn.closest('.nav-folder');
+                    setOpen(folder, !folder.classList.contains('open'));
+                });
+            });
+            document.querySelectorAll('.nav-item').forEach((link) => {
+                const linkUrl = new URL(link.href);
+                if (currentUrl.pathname === linkUrl.pathname) {
+                    link.classList.add('active');
+                    link.setAttribute('aria-current', 'page');
+                    let parent = link.closest('.nav-folder');
+                    while (parent) {
+                        setOpen(parent, true);
+                        parent = parent.parentElement?.closest('.nav-folder');
+                    }
+                    link.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+                }
+            });
+            if (sidebar) {
+                const saved = sessionStorage.getItem('sb-scroll');
+                if (saved) sidebar.scrollTop = parseInt(saved, 10);
+                sidebar.onscroll = () => sessionStorage.setItem('sb-scroll', String(sidebar.scrollTop));
+            }
+
+            const backdrop = document.querySelector('[data-sidebar-backdrop]');
+            const toggle = document.querySelector('[data-sidebar-toggle]');
+            function setMobileNav(open) {
+                document.body.classList.toggle('sidebar-mobile-open', open);
+                toggle?.setAttribute('aria-expanded', open ? 'true' : 'false');
+                if (backdrop) backdrop.hidden = !open;
+            }
+            toggle?.addEventListener('click', () => {
+                setMobileNav(!document.body.classList.contains('sidebar-mobile-open'));
+            });
+            backdrop?.addEventListener('click', () => setMobileNav(false));
+            document.querySelectorAll('.sidebar .nav-item').forEach((link) => {
+                link.addEventListener('click', () => {
+                    if (window.matchMedia('(max-width: 49.99rem)').matches) setMobileNav(false);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

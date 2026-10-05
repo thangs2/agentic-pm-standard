@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre-flight readiness — stages 1–9 | APS — Agentic PM Standard</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,slnt,wdth,wght,ROND@8..144,-10..0,25..150,400..700,0..100&amp;display=swap">
+    <link rel="stylesheet" href="../../../_assets/aps-antigravity.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" media="(prefers-color-scheme: light)">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" media="(prefers-color-scheme: dark)">
+    
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+</head>
+<body class="page has-toc" data-has-sidebar data-active-section="01.flow" data-html-base="../../../">
+    <a class="sl-skip-link" href="#main-content">Skip to content</a>
+    <header class="header">
+        <div class="header-stack">
+            <div class="header-main">
+                <div class="title-wrapper">
+                    <a class="site-title" href="../../../00.start/00.index.html"><span class="site-title-mark">APS</span> Agentic PM Standard</a>
+                </div>
+                <div class="search-wrapper">
+                    <button type="button" class="search-trigger" data-search-trigger aria-haspopup="dialog" aria-controls="aps-search-dialog">
+                        <span class="search-trigger-label">Search</span>
+                        <span class="search-trigger-keys"><kbd>Ctrl</kbd><kbd>K</kbd></span>
+                    </button>
+                </div>
+                <div class="header-actions">
+                    <button type="button" class="sidebar-mobile-toggle" aria-expanded="false" aria-controls="sidebar" data-sidebar-toggle>
+                        <span class="sidebar-mobile-toggle-label">Menu</span>
+                    </button>
+                    <div class="theme-select" role="group" aria-label="Theme">
+                        <button type="button" data-theme-pick="dark">Dark</button>
+                        <button type="button" data-theme-pick="light">Light</button>
+                        <button type="button" data-theme-pick="auto" class="is-active">Auto</button>
+                    </div>
+                    <a class="header-link" href="../../../00.start/08.glossary.html" title="Key APS terms (~3 min)">Glossary</a>
+                    <a class="header-link" href="../../../00.index.html">md index</a>
+                </div>
+            </div>
+            <div class="subnav-bar" aria-label="Pack sections">
+        <div class="subnav-container">
+            <div class="subnav-left"><a class="subnav-pill" href="../../../00.start/00.index.html">Start</a><span class="subnav-divider" aria-hidden="true"></span><a class="subnav-pill active" href="../../../01.flow/00.index.html">Flow</a><a class="subnav-pill" href="../../../02.gate/00.index.html">Gate</a><a class="subnav-pill" href="../../../03.factory/00.index.html">Factory</a><span class="subnav-divider" aria-hidden="true"></span><a class="subnav-pill" href="../../../04.playbooks/00.index.html">Playbooks</a><a class="subnav-pill" href="../../../05.failure/00.index.html">Failure</a><span class="subnav-divider" aria-hidden="true"></span><a class="subnav-pill" href="../../../06.laws/00.index.html">Laws</a><a class="subnav-pill" href="../../../07.templates/00.index.html">Templates</a><a class="subnav-pill" href="../../../08.platform/00.index.html">Platform</a><span class="subnav-divider" aria-hidden="true"></span><a class="subnav-pill" href="../../../09.lookup/00.index.html">Lookup</a></div>
+        </div>
+    </div>
+        </div>
+    </header>
+    <div class="page-body">
+        <div class="sidebar-backdrop" data-sidebar-backdrop hidden></div>
+        <nav class="sidebar" aria-label="Pack navigation">
+            <div class="sidebar-pane" id="sidebar">
+                <div class="sidebar-content">
+                    <ul class="sl-sidebar-list"><li class="sidebar-hub" aria-label="Section shortcuts">
+        <p class="sidebar-hub-title">Flow</p>
+        <div class="sidebar-hub-links">
+            <a class="nav-item nav-hub nav-hub-primary" href="../../../00.start/00.index.html">Decision board</a>
+            <a class="nav-item nav-hub" href="../../../01.flow/00.index.html">Section index</a>
+            <a class="nav-item nav-hub" href="../../../00.start/01.story-spine.html">Story spine</a>
+            <a class="nav-item nav-hub nav-hub-muted" href="../../../00.index.html">Markdown hub</a>
+        </div>
+    </li><li><a href="../../../01.flow/01.master-value-stream.html" class="nav-item nav-item-rich"><span class="nav-num">01</span><span class="nav-label">Master value stream</span></a></li><li><a href="../../../01.flow/02.intake-funnel.html" class="nav-item nav-item-rich"><span class="nav-num">02</span><span class="nav-label">Intake funnel (detail)</span></a></li><li><a href="../../../01.flow/03.classify-to-ready.html" class="nav-item nav-item-rich"><span class="nav-num">03</span><span class="nav-label">Classify → Ready</span></a></li><li><a href="../../../01.flow/04.ready-pull-build-review.html" class="nav-item nav-item-rich"><span class="nav-num">04</span><span class="nav-label">Ready → pull → build → review</span></a></li><li><a href="../../../01.flow/05.qc-and-ship.html" class="nav-item nav-item-rich"><span class="nav-num">05</span><span class="nav-label">QC execute and ship (Planes B′ and C)</span></a></li><li><a href="../../../01.flow/06.agent-execution-pipeline.html" class="nav-item nav-item-rich"><span class="nav-num">06</span><span class="nav-label">Agent execution pipeline (immutable session order)</span></a></li><li><a href="../../../01.flow/07.trust-ladder-phases.html" class="nav-item nav-item-rich"><span class="nav-num">07</span><span class="nav-label">Trust ladder (calibrate auto-ready)</span></a></li><li class="nav-folder" data-nav-id="01.flow/08.lifecycle"><button type="button" class="folder-toggle" aria-expanded="false"><svg class="chevron" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 0 1 0-1.06Z"/></svg><span>Lifecycle</span></button><ul class="nav-sub-tree"><li><a href="../../../01.flow/08.lifecycle/00.index.html" class="nav-item">Lifecycle</a></li><li class="nav-folder" data-nav-id="01.flow/08.lifecycle/01.entry"><button type="button" class="folder-toggle" aria-expanded="false"><svg class="chevron" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 0 1 0-1.06Z"/></svg><span>Entry</span></button><ul class="nav-sub-tree"><li><a href="../../../01.flow/08.lifecycle/01.entry/00.index.html" class="nav-item">Lifecycle entry</a></li><li><a href="../../../01.flow/08.lifecycle/01.entry/01.overview.html" class="nav-item nav-item-rich"><span class="nav-num">01</span><span class="nav-label">Overview — what APS is</span></a></li><li><a href="../../../01.flow/08.lifecycle/01.entry/02.funnel-outside-in.html" class="nav-item nav-item-rich"><span class="nav-num">02</span><span class="nav-label">Funnel — outside → inside</span></a></li></ul></li><li class="nav-folder" data-nav-id="01.flow/08.lifecycle/02.increment"><button type="button" class="folder-toggle" aria-expanded="false"><svg class="chevron" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 0 1 0-1.06Z"/></svg><span>Increment</span></button><ul class="nav-sub-tree"><li><a href="../../../01.flow/08.lifecycle/02.increment/00.index.html" class="nav-item">Increment</a></li><li><a href="../../../01.flow/08.lifecycle/02.increment/01.bootstrap.html" class="nav-item nav-item-rich"><span class="nav-num">01</span><span class="nav-label">Feature increment bootstrap — MVP → waves</span></a></li><li><a href="../../../01.flow/08.lifecycle/02.increment/02.wave-go-nogo.html" class="nav-item nav-item-rich"><span class="nav-num">02</span><span class="nav-label">Wave Go / No-Go — increment dashboard</span></a></li></ul></li><li class="nav-folder" data-nav-id="01.flow/08.lifecycle/03.slice"><button type="button" class="folder-toggle" aria-expanded="false"><svg class="chevron" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 0 1 0-1.06Z"/></svg><span>Slice</span></button><ul class="nav-sub-tree"><li><a href="../../../01.flow/08.lifecycle/03.slice/00.index.html" class="nav-item">Slice</a></li><li><a href="../../../01.flow/08.lifecycle/03.slice/01.pre-flight.html" class="nav-item nav-item-rich"><span class="nav-num">01</span><span class="nav-label">Pre-flight readiness — stages 1–9</span></a></li><li><a href="../../../01.flow/08.lifecycle/03.slice/02.go-nogo.html" class="nav-item nav-item-rich"><span class="nav-num">02</span><span class="nav-label">Slice Go / No-Go — BA · QC · DEV</span></a></li><li><a href="../../../01.flow/08.lifecycle/03.slice/03.bip-fip.html" class="nav-item nav-item-rich"><span class="nav-num">03</span><span class="nav-label">BIP / FIP implementation packets — READY · READY-SPLIT</span></a></li></ul></li></ul></li></ul>
+                </div>
+            </div>
+        </nav>
+        <div class="main-frame">
+            <main id="main-content" class="main-pane" tabindex="-1">
+                <div class="sl-container">
+                    <nav class="doc-breadcrumb" aria-label="Breadcrumb"><ol><li><a href="../../../00.start/00.index.html">APS</a></li><li><a href="../../../01.flow/00.index.html">Flow</a></li><li><span class="breadcrumb-muted">Lifecycle</span></li><li><span class="breadcrumb-muted">Slice</span></li><li class="breadcrumb-current" aria-current="page">01 Pre-flight readiness — stages 1–9</li></ol></nav>
+                    <article class="sl-markdown-content"><h1>Pre-flight readiness — stages 1–9</h1>
+<p><strong>Scope:</strong> Cockpit inspection before <strong>Plane B</strong> (implement) or tracker <strong>Ready</strong>.</p>
+<p><strong>Rule:</strong> Walk stages <strong>1 → 9 in order</strong>. One unchecked <strong>active</strong> checkbox for this scope → <strong>BLOCKED</strong> (no product code).</p>
+<p><strong>Status values (per row):</strong> <code>READY</code> · <code>P</code> (partial — gap + OPEN id) · <code>BLOCKED</code> · <code>N/A</code> (reason required).</p>
+<table>
+<thead>
+<tr>
+<th>Copy type</th>
+<th>Where (pattern)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Governance template</td>
+<td><code>{governance}/03.quality-gate/02.pre-flight-readiness-checklist.md</code></td>
+</tr>
+<tr>
+<td>Epic filled matrix</td>
+<td><code>{wbs}/00.coverage/03.quality-gate/{epic}/02.pre-flight-readiness-checklist.md</code></td>
+</tr>
+<tr>
+<td>Slice subset (stages 6–9)</td>
+<td><code>{wbs}/05.tasks/{service}/{slice}/02.pre-flight-slice.md</code></td>
+</tr>
+</tbody></table>
+<p><strong>Companion:</strong> <a href="02.go-nogo.html">06.go-nogo.md</a> (Leader BA ∩ QC ∩ DEV). <strong>Flow:</strong> <a href="../../../02.gate/04.gate-artifact-flow.html">04.gate-artifact-flow.md</a>.</p>
+<hr>
+<h2 id="1.-pre-flight-inspection-table-(stage-by-stage)">1. Pre-flight inspection table (stage-by-stage)</h2>
+<table>
+<thead>
+<tr>
+<th align="center">Stage (SDLC)</th>
+<th>Officer</th>
+<th>Inspection target / evidence</th>
+<th>Readiness criteria (verify all that apply)</th>
+<th align="center">Status</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><strong>1 — Requirements</strong></td>
+<td>PM / BA</td>
+<td><code>{doc_root}/02.requirements/</code> per <code>domain_slug</code>: BRD · PRD · FRD · SRS</td>
+<td>- [ ] <code>domain_slug</code> + primary <strong>service or app</strong> named<br>- [ ] In-scope / out-of-scope explicit (<code>00.domain.md</code> or feature)<br>- [ ] Policy or as-built cite (<code>{law_root}/</code>)<br>- [ ] Intake rubric <strong>A–H</strong> pass (<a href="../../../02.gate/01.classification-and-gate.html">quality gate</a>)</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><strong>2 — Analysis</strong></td>
+<td>BA</td>
+<td><code>{doc_root}/03.analysis/01.business-process/{slug}/</code><br>spine · <code>{module}/us/</code> · <code>cases/01.case-catalog.md</code> · <code>flows/</code></td>
+<td>- [ ] Actor, intent, value per in-scope US<br>- [ ] AC: Given/When/Then + <strong>≥1 failure/edge</strong> per US<br>- [ ] E2E spine + per-US flow shards (no silent OPEN on in-scope activity rows)<br>- [ ] <code>case_id</code> taxonomy matches QC matrix</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><strong>3 — Quality control (design)</strong></td>
+<td>QC Lead</td>
+<td><code>{doc_root}/03.analysis/04.quality-control/{slug}/</code><br>scenarios · test strategy · qc-lane index · execution trace (recommended)</td>
+<td>- [ ] <strong>Every</strong> in-scope catalog <strong>case_id</strong> → ≥1 <code>scenario_id</code> (not “one happy + one fail” only)<br>- [ ] Types: happy · edge · failure · tenant/rbac when AC requires<br>- [ ] Test layers: <strong>UT · IT · QC · KIND</strong> · <strong>E2E-BE · E2E-FE</strong> (or OUT) · NFR <strong>LOAD · STRESS · PERF</strong> (or OUT + OPEN)<br>- [ ] TDD <strong>quartet</strong> planned on Story (<code>tdd-unit</code> · <code>tdd-impl</code> · <code>tdd-coverage</code> · <code>tdd-qc</code>)<br>- [ ] <strong>QC execute (Plane B′) not claimed here</strong> — design only</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><strong>4 — API &amp; interface</strong></td>
+<td>Arch / BE</td>
+<td><code>{doc_root}/04.architecture/05.api/{slug}/</code><br>HTTP · events (4-segment PATTERN) · design trace if <code>[fe]</code> UI</td>
+<td>- [ ] Path or <strong>PATTERN</strong> cited — never invented<br>- [ ] Unfinalized → <strong>OPEN</strong> id + owner<br>- [ ] DTO / contract rules documented<br>- [ ] Messaging topology named when dispatch/listen required</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><strong>5 — Data &amp; persistence</strong></td>
+<td>BE</td>
+<td><code>{doc_root}/04.architecture/06.data-model/{slug}/</code><br>owning schema in service repo</td>
+<td>- [ ] Collection + indexes in <strong>owning service</strong> only<br>- [ ] Write transaction + outbox pattern on mutating paths<br>- [ ] Cache / search index not SoT for aggregate<br>- [ ] OPEN register for unresolved schema</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><strong>6 — BIP / FIP readiness</strong></td>
+<td>BE / FE lead</td>
+<td><code>{wbs}/05.tasks/{service}/{slice}/</code><br><code>01.bip.md</code> or <code>01.fip.md</code> · module pack · <code>00.task.md</code></td>
+<td>- [ ] Planes <strong>A–E</strong> + Note (<a href="03.bip-fip.html">07.bip-fip.md</a>)<br>- [ ] One service or app per packet<br>- [ ] §7 Verify table + §8 OPEN register (Id · What · Owner · Blocks)<br>- [ ] Status <strong><code>READY</code></strong> or <strong><code>READY-SPLIT</code></strong> or <strong><code>BLOCKED</code></strong> with named OPEN</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><strong>7 — Test specification (RED)</strong></td>
+<td>DEV / QC</td>
+<td><code>01.red-tests.md</code> · <code>02.nfr-e2e-spec.md</code> when in scope · Story <code>qc/00.index.md</code></td>
+<td>- [ ] UT/IT target paths + test filter; expected <strong>RED</strong> before GREEN<br>- [ ] E2E scripts or manual SCN steps when matrix marks E2E<br>- [ ] LOAD/STRESS/PERF profiles when planned in stage 3<br>- [ ] Maps to <code>scenario_id</code> / <code>case_id</code> / SRS NFR id</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><strong>8 — TDD implementation</strong></td>
+<td>DEV</td>
+<td>Code tree + verify log</td>
+<td>- [ ] <strong>Build</strong> PASS on touched service/app<br>- [ ] <strong>Unit/integration tests</strong> PASS when script exists<br>- [ ] Plane <strong>B′</strong>: QC + E2E + NFR evidence per SRS (not all required for DEV HIL unless SRS says so)<br>- [ ] New event → topology updated + relay after commit<br>- [ ] Zero CRITICAL/HIGH anti-patterns<br>- [ ] Agent does <strong>not</strong> mark tracker Done</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><strong>9 — Landing &amp; HIL</strong></td>
+<td>PM / Human</td>
+<td>Tracker · git · <a href="../../../03.factory/03.agent-factory.html">10.agent-factory.md</a></td>
+<td>- [ ] Verify log on ticket / HIL comment<br>- [ ] Transition <strong>Human In Review</strong> only<br>- [ ] Increment dashboard aligned with slice Leader GO<br>- [ ] Commit / PR only when user asks</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="2.-cockpit-instruments-by-role">2. Cockpit instruments by role</h2>
+<h3 id="panel-a-—-pm-/-tdm-(mission-command)">Panel A — PM / TDM (mission command)</h3>
+<ol>
+<li>Wave go-nogo dashboard → <a href="../02.increment/02.wave-go-nogo.html">02.increment/02.wave-go-nogo.md</a></li>
+<li>Operating model planes → <a href="../../../03.factory/01.core/03.planes.html">03.planes.md</a></li>
+<li>Trace matrix (<code>{wbs}/00.coverage/02.trace-matrix.md</code>)</li>
+<li>Human-in-review runbook → <a href="../../../03.factory/03.agent-factory.html">10.agent-factory.md</a></li>
+<li>Wave vs sprint vs slice glossary → increment bootstrap §3</li>
+</ol>
+<h3 id="panel-b-—-ba-(route-requirements)">Panel B — BA (route &amp; requirements)</h3>
+<ol>
+<li>Requirements shards for active <code>domain_slug</code></li>
+<li>Business-process folder — spine · US · cases · flows</li>
+<li>Feature <code>00.intake.md</code> — A–H evidence</li>
+<li>Cross-check: QC <code>01.scenarios.md</code> ↔ case catalog</li>
+</ol>
+<h3 id="panel-c-—-dev-/-be-/-fe-lead-(engine-room)">Panel C — DEV / BE / FE lead (engine room)</h3>
+<ol>
+<li>Backend / frontend readiness rules (stack standards)</li>
+<li>BIP/FIP template → <a href="03.bip-fip.html">07.bip-fip.md</a></li>
+<li>Atomic WBS table (one file per subtask row)</li>
+<li>Validate + agentic factory loop</li>
+<li>Lifecycle standard §5 — TDD quartet on tracker</li>
+</ol>
+<h3 id="panel-d-—-qc-/-qa-(safety-plane-b′)">Panel D — QC / QA (safety &amp; Plane B′)</h3>
+<ol>
+<li>QC scenario matrix template — coverage law</li>
+<li>Functional matrix <code>01.scenarios.md</code></li>
+<li>Test strategy — Unit · Integration · QC · Load · Stress · Performance</li>
+<li>QC lane index + trigger matrix — G-QC-* gates</li>
+<li>Case execution trace — UT/IT/QC/KIND/NFR ledger</li>
+<li>Story <code>qc/00.index.md</code> + <strong>Plane B′ QC execute</strong> <strong>after</strong> DEV Done (<a href="../../../03.factory/03.agent-factory.html">10.agent-factory.md</a> §4)</li>
+</ol>
+<hr>
+<h2 id="3.-escalation-split-readiness">3. Escalation &amp; split readiness</h2>
+<table>
+<thead>
+<tr>
+<th>Verdict</th>
+<th>When</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>BLOCKED</strong></td>
+<td>Any mandatory <code>[ ]</code> for the active slice; undefined tenancy; invented HTTP/PATTERN</td>
+<td>Do not pull <strong>In Progress</strong>; record OPEN id + owner</td>
+</tr>
+<tr>
+<td><strong>P</strong></td>
+<td>Docs exist but OPEN ids remain (API, NFR harness, design tool)</td>
+<td>Docs Ready may be <strong>P</strong> on increment dashboard; slice Leader still <strong>NO-GO</strong> until DEV rows GO</td>
+</tr>
+<tr>
+<td><strong>READY-SPLIT</strong></td>
+<td>Domain/schema/BIP ready; HTTP or FE contract still <strong>OPEN</strong> with owner</td>
+<td>Domain/RED may proceed only if BIP explicitly <strong>READY-SPLIT</strong> and WBS splits HTTP/FE subtasks</td>
+</tr>
+<tr>
+<td><strong>N/A</strong></td>
+<td>Stage does not apply (e.g. stage 5 on read-only FE list)</td>
+<td>State reason on filled copy</td>
+</tr>
+</tbody></table>
+<p><strong>Blocked item register (filled copies only):</strong></p>
+<div class="code-panel" data-lang="plaintext"><div class="code-panel-header"><span class="code-lang">plaintext</span><button type="button" class="code-copy" data-copy>Copy</button></div><div class="code-panel-body"><div class="code-lines" aria-hidden="true"><span>1</span><span>2</span><span>3</span></div><pre class="code-pre"><code class="hljs language-plaintext">OPEN:
+Owner:
+Unblocks stage:</code></pre></div></div><hr>
+<h2 id="4.-agent-pre-flight-run-(dev-runtime,-before-protected-writes)">4. Agent pre-flight run (dev-runtime, before protected writes)</h2>
+<ol>
+<li>BIND — load <code>00.task.md</code>, BIP/FIP, <a href="02.go-nogo.html">06.go-nogo.md</a>, stages 6–9 slice copy.</li>
+<li>For stages <strong>1–7</strong>: read cited paths → emit <strong>GREEN / RED / P</strong> per row (no invention).</li>
+<li>Any stage <strong>1–6</strong> RED → <strong>abort implement</strong>; return evidence packet to PM.</li>
+<li>Stage <strong>8</strong> only when stage <strong>6</strong> = <code>READY</code> or <code>READY-SPLIT</code> with named OPEN and Leader DEV ≠ NO.</li>
+<li>After implement: stage <strong>8</strong> verify log mandatory; stage <strong>9</strong> = HIL handoff only.</li>
+</ol>
+<p><strong>Docs Ready ≠ slice Leader GO.</strong> Pre-flight proves artifacts exist; go-nogo is role sign-off.</p>
+</article>
+                    <nav class="page-nav-footer" aria-label="Pages in this section"><a class="page-nav-link page-nav-prev" href="../../../01.flow/08.lifecycle/03.slice/00.index.html"><span class="page-nav-kicker">Previous</span><span class="page-nav-title">Slice</span></a><a class="page-nav-link page-nav-next" href="../../../01.flow/08.lifecycle/03.slice/02.go-nogo.html"><span class="page-nav-kicker">Next</span><span class="page-nav-title">02 Slice Go / No-Go — BA · QC · DEV</span></a></nav>
+                </div>
+            </main>
+            <aside class="right-sidebar" aria-label="On this page">
+        <div class="right-sidebar-panel">
+            <h2>On this page</h2>
+            <ul class="right-sidebar-toc"><li class="toc-level-2"><a href="#1.-pre-flight-inspection-table-(stage-by-stage)">1. Pre-flight inspection table (stage-by-stage)</a></li><li class="toc-level-2"><a href="#2.-cockpit-instruments-by-role">2. Cockpit instruments by role</a></li><li class="toc-level-3"><a href="#panel-a-—-pm-/-tdm-(mission-command)">Panel A — PM / TDM (mission command)</a></li><li class="toc-level-3"><a href="#panel-b-—-ba-(route-requirements)">Panel B — BA (route &amp; requirements)</a></li><li class="toc-level-3"><a href="#panel-c-—-dev-/-be-/-fe-lead-(engine-room)">Panel C — DEV / BE / FE lead (engine room)</a></li><li class="toc-level-3"><a href="#panel-d-—-qc-/-qa-(safety-plane-b′)">Panel D — QC / QA (safety &amp; Plane B′)</a></li><li class="toc-level-2"><a href="#3.-escalation-split-readiness">3. Escalation &amp; split readiness</a></li><li class="toc-level-2"><a href="#4.-agent-pre-flight-run-(dev-runtime,-before-protected-writes)">4. Agent pre-flight run (dev-runtime, before protected writes)</a></li></ul>
+        </div>
+    </aside>
+        </div>
+    </div>
+    <div class="aps-search-dialog" id="aps-search-dialog" data-search-dialog hidden role="dialog" aria-modal="true" aria-label="Search the APS wiki">
+        <div class="aps-search-panel">
+            <div class="aps-search-field">
+                <input type="search" data-search-input class="aps-search-input" placeholder="Search the pack — try “REWORK”, “Plane B”, “auto-ready”…" autocomplete="off" spellcheck="false" aria-label="Search query">
+                <kbd class="aps-search-esc">Esc</kbd>
+            </div>
+            <ul class="aps-search-results" data-search-results></ul>
+            <p class="aps-search-empty" data-search-empty hidden></p>
+            <p class="aps-search-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+        </div>
+    </div>
+    <script src="../../../_assets/aps-search.js" defer></script>
+    <script>
+        (function initTheme() {
+            const key = 'aps-docs-theme';
+            const root = document.documentElement;
+            function apply(mode) {
+                document.querySelectorAll('[data-theme-pick]').forEach((btn) => {
+                    btn.classList.toggle('is-active', btn.getAttribute('data-theme-pick') === mode);
+                });
+                if (mode === 'auto') {
+                    root.removeAttribute('data-theme');
+                } else {
+                    root.setAttribute('data-theme', mode);
+                }
+                try { localStorage.setItem(key, mode); } catch (_) {}
+            }
+            let saved = 'auto';
+            try { saved = localStorage.getItem(key) || 'auto'; } catch (_) {}
+            apply(saved);
+            document.querySelectorAll('[data-theme-pick]').forEach((btn) => {
+                btn.addEventListener('click', () => apply(btn.getAttribute('data-theme-pick') || 'auto'));
+            });
+        })();
+
+        
+        mermaid.initialize({
+            startOnLoad: false,
+            theme: 'dark',
+            securityLevel: 'loose',
+            flowchart: {
+                htmlLabels: true,
+                curve: 'basis',
+                useMaxWidth: false,
+                padding: 16,
+                nodeSpacing: 40,
+                rankSpacing: 72,
+                diagramPadding: 16
+            },
+            sequence: { useMaxWidth: false, diagramMarginX: 40, diagramMarginY: 20, actorMargin: 50, boxMargin: 10 },
+            er: { useMaxWidth: false },
+            gantt: { useMaxWidth: false },
+            journey: { useMaxWidth: false },
+            timeline: { useMaxWidth: false },
+            class: { useMaxWidth: false },
+            state: { useMaxWidth: false },
+            pie: { useMaxWidth: false },
+            mindmap: { useMaxWidth: false }
+        });
+
+        async function renderMermaid() {
+            const nodes = [...document.querySelectorAll('pre.mermaid')];
+            for (const el of nodes) {
+                const code = (el.textContent || '').trim();
+                if (!code) continue;
+                try {
+                    const id = 'mmd-' + Math.random().toString(36).slice(2);
+                    const { svg } = await mermaid.render(id, code);
+
+                    const stage = document.createElement('div');
+                    stage.className = 'mermaid-stage';
+
+                    const toolbar = document.createElement('div');
+                    toolbar.className = 'mermaid-toolbar';
+                    toolbar.innerHTML = [
+                        '<button type="button" data-act="zoom-out" title="Zoom out">−</button>',
+                        '<input class="zoom-input" type="number" min="5" max="500" step="5" value="100" title="Type zoom % then Enter" aria-label="Zoom percent">',
+                        '<span class="zoom-suffix">%</span>',
+                        '<button type="button" data-act="zoom-in" title="Zoom in">+</button>',
+                        '<button type="button" data-act="reset" title="Reset view">⟲</button>',
+                        '<button type="button" data-act="fullscreen" title="Fullscreen">⛶</button>'
+                    ].join('');
+
+                    const hint = document.createElement('div');
+                    hint.className = 'mermaid-hint';
+                    hint.textContent = 'Scroll zoom · Drag pan · Type % · ⛶ fullscreen';
+
+                    const viewport = document.createElement('div');
+                    viewport.className = 'mermaid-viewport';
+
+                    const wrap = document.createElement('div');
+                    wrap.className = 'mermaid';
+                    wrap.innerHTML = svg;
+                    const svgEl = wrap.querySelector('svg');
+                    if (svgEl) {
+                        svgEl.removeAttribute('height');
+                        svgEl.style.maxWidth = 'none';
+                        svgEl.style.height = 'auto';
+                    }
+
+                    viewport.appendChild(wrap);
+                    stage.appendChild(toolbar);
+                    stage.appendChild(hint);
+                    stage.appendChild(viewport);
+                    el.replaceWith(stage);
+
+                    const pz = Panzoom(wrap, {
+                        maxScale: 5,
+                        minScale: 0.05,
+                        cursor: 'grab'
+                    });
+                    viewport.addEventListener('wheel', pz.zoomWithWheel);
+                    const zoomInput = toolbar.querySelector('.zoom-input');
+                    let syncing = false;
+                    const syncZoom = () => {
+                        if (!zoomInput || syncing) return;
+                        syncing = true;
+                        zoomInput.value = String(Math.round(pz.getScale() * 100));
+                        syncing = false;
+                    };
+                    const applyZoomPct = () => {
+                        if (!zoomInput) return;
+                        let pct = Number(zoomInput.value);
+                        if (!Number.isFinite(pct)) pct = 100;
+                        pct = Math.min(500, Math.max(5, Math.round(pct)));
+                        zoomInput.value = String(pct);
+                        pz.zoom(pct / 100, { animate: true });
+                    };
+                    zoomInput.addEventListener('keydown', (ev) => {
+                        if (ev.key === 'Enter') {
+                            ev.preventDefault();
+                            applyZoomPct();
+                            zoomInput.blur();
+                        }
+                        ev.stopPropagation();
+                    });
+                    zoomInput.addEventListener('change', applyZoomPct);
+                    zoomInput.addEventListener('click', (ev) => {
+                        ev.stopPropagation();
+                        zoomInput.select();
+                    });
+                    wrap.addEventListener('panzoomchange', syncZoom);
+                    toolbar.addEventListener('click', (ev) => {
+                        const btn = ev.target.closest('button[data-act]');
+                        if (!btn) return;
+                        const act = btn.dataset.act;
+                        if (act === 'zoom-in') pz.zoomIn();
+                        if (act === 'zoom-out') pz.zoomOut();
+                        if (act === 'reset') { pz.reset(); syncZoom(); }
+                        if (act === 'fullscreen') {
+                            const on = stage.classList.toggle('is-fullscreen');
+                            btn.title = on ? 'Exit fullscreen (Esc)' : 'Fullscreen';
+                            btn.textContent = on ? '✕' : '⛶';
+                            document.body.style.overflow = on ? 'hidden' : '';
+                            requestAnimationFrame(() => pz.reset());
+                        }
+                        syncZoom();
+                    });
+                    document.addEventListener('keydown', (ev) => {
+                        if (ev.key === 'Escape' && stage.classList.contains('is-fullscreen')) {
+                            stage.classList.remove('is-fullscreen');
+                            const fsBtn = toolbar.querySelector('[data-act="fullscreen"]');
+                            if (fsBtn) { fsBtn.textContent = '⛶'; fsBtn.title = 'Fullscreen'; }
+                            document.body.style.overflow = '';
+                            requestAnimationFrame(() => pz.reset());
+                        }
+                    });
+                } catch (err) {
+                    el.classList.add('mermaid-error');
+                    el.textContent = 'Mermaid error: ' + (err && err.message ? err.message : String(err)) + '\n\n' + code;
+                    console.error('Mermaid failed:', err);
+                }
+            }
+        }
+    
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            await renderMermaid();
+            document.querySelectorAll('.code-panel .code-copy').forEach((btn) => {
+                btn.addEventListener('click', async () => {
+                    const panel = btn.closest('.code-panel');
+                    const codeEl = panel?.querySelector('code');
+                    const text = codeEl?.textContent || '';
+                    try {
+                        await navigator.clipboard.writeText(text);
+                        btn.textContent = 'Copied';
+                        btn.classList.add('is-copied');
+                        setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('is-copied'); }, 1400);
+                    } catch {
+                        btn.textContent = 'Failed';
+                        setTimeout(() => { btn.textContent = 'Copy'; }, 1400);
+                    }
+                });
+            });
+            const sidebar = document.getElementById('sidebar');
+            const STORAGE_KEY = 'aps-nav-open';
+            const currentUrl = new URL(window.location.href);
+            function loadOpenSet() {
+                try { return new Set(JSON.parse(sessionStorage.getItem(STORAGE_KEY) || '[]')); }
+                catch { return new Set(); }
+            }
+            function saveOpenSet(set) {
+                sessionStorage.setItem(STORAGE_KEY, JSON.stringify([...set]));
+            }
+            let openSet = loadOpenSet();
+            function setOpen(folder, open) {
+                const id = folder.dataset.navId;
+                folder.classList.toggle('open', open);
+                folder.querySelector('.folder-toggle')?.setAttribute('aria-expanded', open ? 'true' : 'false');
+                if (open) openSet.add(id); else openSet.delete(id);
+                saveOpenSet(openSet);
+            }
+            document.querySelectorAll('.nav-folder[data-nav-id]').forEach((folder) => {
+                if (openSet.has(folder.dataset.navId)) setOpen(folder, true);
+            });
+            document.querySelectorAll('.nav-folder[data-nav-default-open]').forEach((folder) => {
+                setOpen(folder, true);
+            });
+            document.querySelectorAll('.folder-toggle').forEach((btn) => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const folder = btn.closest('.nav-folder');
+                    setOpen(folder, !folder.classList.contains('open'));
+                });
+            });
+            document.querySelectorAll('.nav-item').forEach((link) => {
+                const linkUrl = new URL(link.href);
+                if (currentUrl.pathname === linkUrl.pathname) {
+                    link.classList.add('active');
+                    link.setAttribute('aria-current', 'page');
+                    let parent = link.closest('.nav-folder');
+                    while (parent) {
+                        setOpen(parent, true);
+                        parent = parent.parentElement?.closest('.nav-folder');
+                    }
+                    link.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+                }
+            });
+            if (sidebar) {
+                const saved = sessionStorage.getItem('sb-scroll');
+                if (saved) sidebar.scrollTop = parseInt(saved, 10);
+                sidebar.onscroll = () => sessionStorage.setItem('sb-scroll', String(sidebar.scrollTop));
+            }
+
+            const backdrop = document.querySelector('[data-sidebar-backdrop]');
+            const toggle = document.querySelector('[data-sidebar-toggle]');
+            function setMobileNav(open) {
+                document.body.classList.toggle('sidebar-mobile-open', open);
+                toggle?.setAttribute('aria-expanded', open ? 'true' : 'false');
+                if (backdrop) backdrop.hidden = !open;
+            }
+            toggle?.addEventListener('click', () => {
+                setMobileNav(!document.body.classList.contains('sidebar-mobile-open'));
+            });
+            backdrop?.addEventListener('click', () => setMobileNav(false));
+            document.querySelectorAll('.sidebar .nav-item').forEach((link) => {
+                link.addEventListener('click', () => {
+                    if (window.matchMedia('(max-width: 49.99rem)').matches) setMobileNav(false);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life cycle and planes | APS — Agentic PM Standard</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,slnt,wdth,wght,ROND@8..144,-10..0,25..150,400..700,0..100&amp;display=swap">
+    <link rel="stylesheet" href="../_assets/aps-antigravity.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" media="(prefers-color-scheme: light)">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" media="(prefers-color-scheme: dark)">
+    
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+</head>
+<body class="page has-toc" data-has-sidebar data-active-section="00.start" data-html-base="../">
+    <a class="sl-skip-link" href="#main-content">Skip to content</a>
+    <header class="header">
+        <div class="header-stack">
+            <div class="header-main">
+                <div class="title-wrapper">
+                    <a class="site-title" href="../00.start/00.index.html"><span class="site-title-mark">APS</span> Agentic PM Standard</a>
+                </div>
+                <div class="search-wrapper">
+                    <button type="button" class="search-trigger" data-search-trigger aria-haspopup="dialog" aria-controls="aps-search-dialog">
+                        <span class="search-trigger-label">Search</span>
+                        <span class="search-trigger-keys"><kbd>Ctrl</kbd><kbd>K</kbd></span>
+                    </button>
+                </div>
+                <div class="header-actions">
+                    <button type="button" class="sidebar-mobile-toggle" aria-expanded="false" aria-controls="sidebar" data-sidebar-toggle>
+                        <span class="sidebar-mobile-toggle-label">Menu</span>
+                    </button>
+                    <div class="theme-select" role="group" aria-label="Theme">
+                        <button type="button" data-theme-pick="dark">Dark</button>
+                        <button type="button" data-theme-pick="light">Light</button>
+                        <button type="button" data-theme-pick="auto" class="is-active">Auto</button>
+                    </div>
+                    <a class="header-link" href="../00.start/08.glossary.html" title="Key APS terms (~3 min)">Glossary</a>
+                    <a class="header-link" href="../00.index.html">md index</a>
+                </div>
+            </div>
+            <div class="subnav-bar" aria-label="Pack sections">
+        <div class="subnav-container">
+            <div class="subnav-left"><a class="subnav-pill active" href="../00.start/00.index.html">Start</a><span class="subnav-divider" aria-hidden="true"></span><a class="subnav-pill" href="../01.flow/00.index.html">Flow</a><a class="subnav-pill" href="../02.gate/00.index.html">Gate</a><a class="subnav-pill" href="../03.factory/00.index.html">Factory</a><span class="subnav-divider" aria-hidden="true"></span><a class="subnav-pill" href="../04.playbooks/00.index.html">Playbooks</a><a class="subnav-pill" href="../05.failure/00.index.html">Failure</a><span class="subnav-divider" aria-hidden="true"></span><a class="subnav-pill" href="../06.laws/00.index.html">Laws</a><a class="subnav-pill" href="../07.templates/00.index.html">Templates</a><a class="subnav-pill" href="../08.platform/00.index.html">Platform</a><span class="subnav-divider" aria-hidden="true"></span><a class="subnav-pill" href="../09.lookup/00.index.html">Lookup</a></div>
+        </div>
+    </div>
+        </div>
+    </header>
+    <div class="page-body">
+        <div class="sidebar-backdrop" data-sidebar-backdrop hidden></div>
+        <nav class="sidebar" aria-label="Pack navigation">
+            <div class="sidebar-pane" id="sidebar">
+                <div class="sidebar-content">
+                    <ul class="sl-sidebar-list"><li class="sidebar-hub" aria-label="Section shortcuts">
+        <p class="sidebar-hub-title">Start</p>
+        <div class="sidebar-hub-links">
+            <a class="nav-item nav-hub nav-hub-primary" href="../00.start/00.index.html">Decision board</a>
+            <a class="nav-item nav-hub" href="../00.start/00.index.html">Method index</a>
+            <a class="nav-item nav-hub" href="../00.index.html">Markdown hub</a>
+            
+        </div>
+    </li><li><a href="../00.start/01.story-spine.html" class="nav-item nav-item-rich"><span class="nav-num">01</span><span class="nav-label">APS story spine (15-minute read)</span></a></li><li><a href="../00.start/02.at-a-glance.html" class="nav-item nav-item-rich"><span class="nav-num">02</span><span class="nav-label">APS Method at a glance</span></a></li><li><a href="../00.start/03.principles.html" class="nav-item nav-item-rich"><span class="nav-num">03</span><span class="nav-label">Seven APS principles</span></a></li><li><a href="../00.start/04.lifecycle-and-planes.html" class="nav-item nav-item-rich"><span class="nav-num">04</span><span class="nav-label">Life cycle and planes</span></a></li><li><a href="../00.start/05.practices-and-risks.html" class="nav-item nav-item-rich"><span class="nav-num">05</span><span class="nav-label">Practices and risks</span></a></li><li><a href="../00.start/06.reading-by-role.html" class="nav-item nav-item-rich"><span class="nav-num">06</span><span class="nav-label">Reading by role (method paths)</span></a></li><li><a href="../00.start/07.metadata-schema.html" class="nav-item nav-item-rich"><span class="nav-num">07</span><span class="nav-label">APS metadata schema (playbooks &amp; edges)</span></a></li><li><a href="../00.start/08.glossary.html" class="nav-item nav-item-rich"><span class="nav-num">08</span><span class="nav-label">Glossary (APS Method)</span></a></li><li><a href="../00.start/09.portfolio-lens.html" class="nav-item nav-item-rich"><span class="nav-num">09</span><span class="nav-label">Portfolio lens (Hiring Manager · 90 seconds)</span></a></li><li><a href="../00.start/10.presentation-kit.html" class="nav-item nav-item-rich"><span class="nav-num">10</span><span class="nav-label">Presentation kit (20-minute talk)</span></a></li></ul>
+                </div>
+            </div>
+        </nav>
+        <div class="main-frame">
+            <main id="main-content" class="main-pane" tabindex="-1">
+                <div class="sl-container">
+                    <nav class="doc-breadcrumb" aria-label="Breadcrumb"><ol><li><a href="../00.start/00.index.html">APS</a></li><li><a href="../00.start/00.index.html">Start</a></li><li class="breadcrumb-current" aria-current="page">04 Life cycle and planes</li></ol></nav>
+                    <article class="sl-markdown-content"><h1>Life cycle and planes</h1>
+<p>Three lenses that must stay separate: <strong>portfolio rhythm</strong>, <strong>product stages</strong>, <strong>governance planes</strong>.</p>
+<hr>
+<h2 id="outside-in-funnel">Outside-in funnel</h2>
+<p>Wide sources (meetings, chat, email, sheets) narrow to verified intake, classify, commit path, Ready backlog, factory, ship, audit.</p>
+<p>Diagram and metrics: <a href="../01.flow/08.lifecycle/01.entry/02.funnel-outside-in.html">../01.flow/08.lifecycle/01.entry/02.funnel-outside-in.md</a> · flow <a href="../01.flow/01.master-value-stream.html">../01.flow/01.master-value-stream.md</a>.</p>
+<hr>
+<h2 id="portfolio-rhythm">Portfolio rhythm</h2>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Decision</th>
+<th>Shard</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Feature increment</strong></td>
+<td>MVP → waves; folder bootstrap</td>
+<td><a href="../01.flow/08.lifecycle/02.increment/01.bootstrap.html">../01.flow/08.lifecycle/02.increment/01.bootstrap.md</a></td>
+</tr>
+<tr>
+<td><strong>Wave</strong></td>
+<td>Which stories enter increment</td>
+<td><a href="../01.flow/08.lifecycle/02.increment/02.wave-go-nogo.html">../01.flow/08.lifecycle/02.increment/02.wave-go-nogo.md</a></td>
+</tr>
+<tr>
+<td><strong>Slice</strong></td>
+<td>One primary service/app; Leader GO</td>
+<td><a href="../01.flow/08.lifecycle/03.slice/02.go-nogo.html">../01.flow/08.lifecycle/03.slice/02.go-nogo.md</a> · <a href="../09.lookup/01.meta/03.domain-increment.html">../09.lookup/01.meta/03.domain-increment.md</a></td>
+</tr>
+</tbody></table>
+<p>Wave GO ≠ slice Leader GO — both may be required before pull.</p>
+<hr>
+<h2 id="eight-product-stages-(+-b′-+-closure)">Eight product stages (+ B′ + closure)</h2>
+<p>Mandatory order before / during Plane B build. Full table: <a href="../09.lookup/01.meta/02.lifecycle-eight-stages.html">../09.lookup/01.meta/02.lifecycle-eight-stages.md</a>.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Stage</th>
+<th>Plane (typical)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>Requirements</td>
+<td>A</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Analysis (US, AC, catalog, flows)</td>
+<td>A</td>
+</tr>
+<tr>
+<td>3</td>
+<td>QC design (matrix plan)</td>
+<td>A</td>
+</tr>
+<tr>
+<td>4</td>
+<td>API &amp; interface</td>
+<td>A</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Data design</td>
+<td>A</td>
+</tr>
+<tr>
+<td>6</td>
+<td>BIP/FIP + WBS readiness</td>
+<td>A</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Test spec (RED)</td>
+<td>A→B</td>
+</tr>
+<tr>
+<td>8</td>
+<td>TDD implement</td>
+<td>B</td>
+</tr>
+<tr>
+<td>3′</td>
+<td>QC execute</td>
+<td>B′</td>
+</tr>
+<tr>
+<td>9</td>
+<td>HIL &amp; closure (evidence)</td>
+<td>B → C</td>
+</tr>
+</tbody></table>
+<p>Pre-flight inspects stages 1–9 on a slice: <a href="../01.flow/08.lifecycle/03.slice/01.pre-flight.html">../01.flow/08.lifecycle/03.slice/01.pre-flight.md</a>.</p>
+<hr>
+<h2 id="governance-planes">Governance planes</h2>
+<table>
+<thead>
+<tr>
+<th>Plane</th>
+<th>Stages (summary)</th>
+<th>Human/agent boundary</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>A</strong></td>
+<td>1–6 (+ QC plan)</td>
+<td>Agent: intake, docs — no product code, no In Progress</td>
+</tr>
+<tr>
+<td><strong>B</strong></td>
+<td>7–8 build</td>
+<td>Agent: implement/verify — no Story Done</td>
+</tr>
+<tr>
+<td><strong>B′</strong></td>
+<td>QC matrix execute</td>
+<td>After qualified DEV; full catalog coverage</td>
+</tr>
+<tr>
+<td><strong>C</strong></td>
+<td>Release, Story Done</td>
+<td>Human only</td>
+</tr>
+</tbody></table>
+<p>Normative: <a href="../06.laws/02.delivery-planes.html">../06.laws/02.delivery-planes.md</a> · operate lens <a href="../03.factory/01.core/03.planes.html">../03.factory/01.core/03.planes.md</a>.</p>
+<hr>
+<h2 id="red-/-green-/-p-(operate-signals)">RED / GREEN / P (operate signals)</h2>
+<p>Not file DONE, not WBS checkbox alone — evidence signals for Leader GO. <a href="../03.factory/01.core/02.red-green-loop.html">../03.factory/01.core/02.red-green-loop.md</a>.</p>
+</article>
+                    <nav class="page-nav-footer" aria-label="Pages in this section"><a class="page-nav-link page-nav-prev" href="../00.start/03.principles.html"><span class="page-nav-kicker">Previous</span><span class="page-nav-title">03 Seven APS principles</span></a><a class="page-nav-link page-nav-next" href="../00.start/05.practices-and-risks.html"><span class="page-nav-kicker">Next</span><span class="page-nav-title">05 Practices and risks</span></a></nav>
+                </div>
+            </main>
+            <aside class="right-sidebar" aria-label="On this page">
+        <div class="right-sidebar-panel">
+            <h2>On this page</h2>
+            <ul class="right-sidebar-toc"><li class="toc-level-2"><a href="#outside-in-funnel">Outside-in funnel</a></li><li class="toc-level-2"><a href="#portfolio-rhythm">Portfolio rhythm</a></li><li class="toc-level-2"><a href="#eight-product-stages-(+-b′-+-closure)">Eight product stages (+ B′ + closure)</a></li><li class="toc-level-2"><a href="#governance-planes">Governance planes</a></li><li class="toc-level-2"><a href="#red-/-green-/-p-(operate-signals)">RED / GREEN / P (operate signals)</a></li></ul>
+        </div>
+    </aside>
+        </div>
+    </div>
+    <div class="aps-search-dialog" id="aps-search-dialog" data-search-dialog hidden role="dialog" aria-modal="true" aria-label="Search the APS wiki">
+        <div class="aps-search-panel">
+            <div class="aps-search-field">
+                <input type="search" data-search-input class="aps-search-input" placeholder="Search the pack — try “REWORK”, “Plane B”, “auto-ready”…" autocomplete="off" spellcheck="false" aria-label="Search query">
+                <kbd class="aps-search-esc">Esc</kbd>
+            </div>
+            <ul class="aps-search-results" data-search-results></ul>
+            <p class="aps-search-empty" data-search-empty hidden></p>
+            <p class="aps-search-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</p>
+        </div>
+    </div>
+    <script src="../_assets/aps-search.js" defer></script>
+    <script>
+        (function initTheme() {
+            const key = 'aps-docs-theme';
+            const root = document.documentElement;
+            function apply(mode) {
+                document.querySelectorAll('[data-theme-pick]').forEach((btn) => {
+                    btn.classList.toggle('is-active', btn.getAttribute('data-theme-pick') === mode);
+                });
+                if (mode === 'auto') {
+                    root.removeAttribute('data-theme');
+                } else {
+                    root.setAttribute('data-theme', mode);
+                }
+                try { localStorage.setItem(key, mode); } catch (_) {}
+            }
+            let saved = 'auto';
+            try { saved = localStorage.getItem(key) || 'auto'; } catch (_) {}
+            apply(saved);
+            document.querySelectorAll('[data-theme-pick]').forEach((btn) => {
+                btn.addEventListener('click', () => apply(btn.getAttribute('data-theme-pick') || 'auto'));
+            });
+        })();
+
+        
+        mermaid.initialize({
+            startOnLoad: false,
+            theme: 'dark',
+            securityLevel: 'loose',
+            flowchart: {
+                htmlLabels: true,
+                curve: 'basis',
+                useMaxWidth: false,
+                padding: 16,
+                nodeSpacing: 40,
+                rankSpacing: 72,
+                diagramPadding: 16
+            },
+            sequence: { useMaxWidth: false, diagramMarginX: 40, diagramMarginY: 20, actorMargin: 50, boxMargin: 10 },
+            er: { useMaxWidth: false },
+            gantt: { useMaxWidth: false },
+            journey: { useMaxWidth: false },
+            timeline: { useMaxWidth: false },
+            class: { useMaxWidth: false },
+            state: { useMaxWidth: false },
+            pie: { useMaxWidth: false },
+            mindmap: { useMaxWidth: false }
+        });
+
+        async function renderMermaid() {
+            const nodes = [...document.querySelectorAll('pre.mermaid')];
+            for (const el of nodes) {
+                const code = (el.textContent || '').trim();
+                if (!code) continue;
+                try {
+                    const id = 'mmd-' + Math.random().toString(36).slice(2);
+                    const { svg } = await mermaid.render(id, code);
+
+                    const stage = document.createElement('div');
+                    stage.className = 'mermaid-stage';
+
+                    const toolbar = document.createElement('div');
+                    toolbar.className = 'mermaid-toolbar';
+                    toolbar.innerHTML = [
+                        '<button type="button" data-act="zoom-out" title="Zoom out">−</button>',
+                        '<input class="zoom-input" type="number" min="5" max="500" step="5" value="100" title="Type zoom % then Enter" aria-label="Zoom percent">',
+                        '<span class="zoom-suffix">%</span>',
+                        '<button type="button" data-act="zoom-in" title="Zoom in">+</button>',
+                        '<button type="button" data-act="reset" title="Reset view">⟲</button>',
+                        '<button type="button" data-act="fullscreen" title="Fullscreen">⛶</button>'
+                    ].join('');
+
+                    const hint = document.createElement('div');
+                    hint.className = 'mermaid-hint';
+                    hint.textContent = 'Scroll zoom · Drag pan · Type % · ⛶ fullscreen';
+
+                    const viewport = document.createElement('div');
+                    viewport.className = 'mermaid-viewport';
+
+                    const wrap = document.createElement('div');
+                    wrap.className = 'mermaid';
+                    wrap.innerHTML = svg;
+                    const svgEl = wrap.querySelector('svg');
+                    if (svgEl) {
+                        svgEl.removeAttribute('height');
+                        svgEl.style.maxWidth = 'none';
+                        svgEl.style.height = 'auto';
+                    }
+
+                    viewport.appendChild(wrap);
+                    stage.appendChild(toolbar);
+                    stage.appendChild(hint);
+                    stage.appendChild(viewport);
+                    el.replaceWith(stage);
+
+                    const pz = Panzoom(wrap, {
+                        maxScale: 5,
+                        minScale: 0.05,
+                        cursor: 'grab'
+                    });
+                    viewport.addEventListener('wheel', pz.zoomWithWheel);
+                    const zoomInput = toolbar.querySelector('.zoom-input');
+                    let syncing = false;
+                    const syncZoom = () => {
+                        if (!zoomInput || syncing) return;
+                        syncing = true;
+                        zoomInput.value = String(Math.round(pz.getScale() * 100));
+                        syncing = false;
+                    };
+                    const applyZoomPct = () => {
+                        if (!zoomInput) return;
+                        let pct = Number(zoomInput.value);
+                        if (!Number.isFinite(pct)) pct = 100;
+                        pct = Math.min(500, Math.max(5, Math.round(pct)));
+                        zoomInput.value = String(pct);
+                        pz.zoom(pct / 100, { animate: true });
+                    };
+                    zoomInput.addEventListener('keydown', (ev) => {
+                        if (ev.key === 'Enter') {
+                            ev.preventDefault();
+                            applyZoomPct();
+                            zoomInput.blur();
+                        }
+                        ev.stopPropagation();
+                    });
+                    zoomInput.addEventListener('change', applyZoomPct);
+                    zoomInput.addEventListener('click', (ev) => {
+                        ev.stopPropagation();
+                        zoomInput.select();
+                    });
+                    wrap.addEventListener('panzoomchange', syncZoom);
+                    toolbar.addEventListener('click', (ev) => {
+                        const btn = ev.target.closest('button[data-act]');
+                        if (!btn) return;
+                        const act = btn.dataset.act;
+                        if (act === 'zoom-in') pz.zoomIn();
+                        if (act === 'zoom-out') pz.zoomOut();
+                        if (act === 'reset') { pz.reset(); syncZoom(); }
+                        if (act === 'fullscreen') {
+                            const on = stage.classList.toggle('is-fullscreen');
+                            btn.title = on ? 'Exit fullscreen (Esc)' : 'Fullscreen';
+                            btn.textContent = on ? '✕' : '⛶';
+                            document.body.style.overflow = on ? 'hidden' : '';
+                            requestAnimationFrame(() => pz.reset());
+                        }
+                        syncZoom();
+                    });
+                    document.addEventListener('keydown', (ev) => {
+                        if (ev.key === 'Escape' && stage.classList.contains('is-fullscreen')) {
+                            stage.classList.remove('is-fullscreen');
+                            const fsBtn = toolbar.querySelector('[data-act="fullscreen"]');
+                            if (fsBtn) { fsBtn.textContent = '⛶'; fsBtn.title = 'Fullscreen'; }
+                            document.body.style.overflow = '';
+                            requestAnimationFrame(() => pz.reset());
+                        }
+                    });
+                } catch (err) {
+                    el.classList.add('mermaid-error');
+                    el.textContent = 'Mermaid error: ' + (err && err.message ? err.message : String(err)) + '\n\n' + code;
+                    console.error('Mermaid failed:', err);
+                }
+            }
+        }
+    
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            await renderMermaid();
+            document.querySelectorAll('.code-panel .code-copy').forEach((btn) => {
+                btn.addEventListener('click', async () => {
+                    const panel = btn.closest('.code-panel');
+                    const codeEl = panel?.querySelector('code');
+                    const text = codeEl?.textContent || '';
+                    try {
+                        await navigator.clipboard.writeText(text);
+                        btn.textContent = 'Copied';
+                        btn.classList.add('is-copied');
+                        setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('is-copied'); }, 1400);
+                    } catch {
+                        btn.textContent = 'Failed';
+                        setTimeout(() => { btn.textContent = 'Copy'; }, 1400);
+                    }
+                });
+            });
+            const sidebar = document.getElementById('sidebar');
+            const STORAGE_KEY = 'aps-nav-open';
+            const currentUrl = new URL(window.location.href);
+            function loadOpenSet() {
+                try { return new Set(JSON.parse(sessionStorage.getItem(STORAGE_KEY) || '[]')); }
+                catch { return new Set(); }
+            }
+            function saveOpenSet(set) {
+                sessionStorage.setItem(STORAGE_KEY, JSON.stringify([...set]));
+            }
+            let openSet = loadOpenSet();
+            function setOpen(folder, open) {
+                const id = folder.dataset.navId;
+                folder.classList.toggle('open', open);
+                folder.querySelector('.folder-toggle')?.setAttribute('aria-expanded', open ? 'true' : 'false');
+                if (open) openSet.add(id); else openSet.delete(id);
+                saveOpenSet(openSet);
+            }
+            document.querySelectorAll('.nav-folder[data-nav-id]').forEach((folder) => {
+                if (openSet.has(folder.dataset.navId)) setOpen(folder, true);
+            });
+            document.querySelectorAll('.nav-folder[data-nav-default-open]').forEach((folder) => {
+                setOpen(folder, true);
+            });
+            document.querySelectorAll('.folder-toggle').forEach((btn) => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const folder = btn.closest('.nav-folder');
+                    setOpen(folder, !folder.classList.contains('open'));
+                });
+            });
+            document.querySelectorAll('.nav-item').forEach((link) => {
+                const linkUrl = new URL(link.href);
+                if (currentUrl.pathname === linkUrl.pathname) {
+                    link.classList.add('active');
+                    link.setAttribute('aria-current', 'page');
+                    let parent = link.closest('.nav-folder');
+                    while (parent) {
+                        setOpen(parent, true);
+                        parent = parent.parentElement?.closest('.nav-folder');
+                    }
+                    link.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+                }
+            });
+            if (sidebar) {
+                const saved = sessionStorage.getItem('sb-scroll');
+                if (saved) sidebar.scrollTop = parseInt(saved, 10);
+                sidebar.onscroll = () => sessionStorage.setItem('sb-scroll', String(sidebar.scrollTop));
+            }
+
+            const backdrop = document.querySelector('[data-sidebar-backdrop]');
+            const toggle = document.querySelector('[data-sidebar-toggle]');
+            function setMobileNav(open) {
+                document.body.classList.toggle('sidebar-mobile-open', open);
+                toggle?.setAttribute('aria-expanded', open ? 'true' : 'false');
+                if (backdrop) backdrop.hidden = !open;
+            }
+            toggle?.addEventListener('click', () => {
+                setMobileNav(!document.body.classList.contains('sidebar-mobile-open'));
+            });
+            backdrop?.addEventListener('click', () => setMobileNav(false));
+            document.querySelectorAll('.sidebar .nav-item').forEach((link) => {
+                link.addEventListener('click', () => {
+                    if (window.matchMedia('(max-width: 49.99rem)').matches) setMobileNav(false);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
