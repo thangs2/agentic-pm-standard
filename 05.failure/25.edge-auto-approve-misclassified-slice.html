@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>45 — Edge: pod bounce → re-intake sender (after auto-Ready) | APS — Agentic PM Standard</title>
+    <title>53 — Edge: auto-approve misclassified slice (form checked, not radius) | APS — Agentic PM Standard</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,slnt,wdth,wght,ROND@8..144,-10..0,25..150,400..700,0..100&amp;display=swap">
     <link rel="stylesheet" href="../assets/aps-antigravity.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" media="(prefers-color-scheme: light)">
@@ -62,40 +62,27 @@
         <div class="main-frame">
             <main id="main-content" class="main-pane" tabindex="-1">
                 <div class="sl-container">
-                    <nav class="doc-breadcrumb" aria-label="Breadcrumb"><ol><li><a href="../00.start/00.index.html">APS</a></li><li><span class="breadcrumb-muted">Apply</span></li><li><a href="../05.failure/00.index.html">Risks</a></li><li class="breadcrumb-current" aria-current="page">17 pod bounce → re-intake sender (after auto-Ready)</li></ol></nav>
-                    <article class="sl-markdown-content"><h1>45 — Edge: pod bounce → re-intake sender (after auto-Ready)</h1>
+                    <nav class="doc-breadcrumb" aria-label="Breadcrumb"><ol><li><a href="../00.start/00.index.html">APS</a></li><li><span class="breadcrumb-muted">Apply</span></li><li><a href="../05.failure/00.index.html">Risks</a></li><li class="breadcrumb-current" aria-current="page">25 auto-approve misclassified slice (form checked, not radius)</li></ol></nav>
+                    <article class="sl-markdown-content"><h1>53 — Edge: auto-approve misclassified slice (form checked, not radius)</h1>
 <h2 id="symptom">Symptom</h2>
-<p>Ticket auto-Ready’d, pod started, then found missing sample / unobservable AC / wrong grain. Fear: “must go back to PM or the system cannot recover.”</p>
+<p>A slice is classified <code>mechanical</code> and auto-approved because the gate only measures shape: small diff, no runtime file touched, low-risk label. The change can still carry semantic blast radius — a config key that silently flips runtime behaviour, a rename that breaks an external contract, a doc others treat as source of truth, a deletion of a fallback path. The auto-approve gate passes on form, not radius; the unreviewed change reaches a shared environment and the damage surfaces later with no human having seen it.</p>
+<p>This is <strong>not</strong> <a href="10.edge-ai-hallucinated-ac.html">38</a> (invented acceptance criteria — a truthfulness failure) nor <a href="11.edge-auto-move-without-pm.html">39</a> (writing where policy forbids — a permission failure). Here the agent was truthful and permitted, but the <strong>risk class was wrong</strong> because nothing measured blast radius.</p>
 <h2 id="detect">Detect</h2>
-<p>Pod label <code>bounce-from-pod</code> · comment with reason code · status left Ready/In Progress incorrectly</p>
+<p><code>surface</code> in (<code>config</code>, <code>contract</code>, <code>routing</code>, <code>rename</code>, <code>deletion</code>) while <code>blast_radius_probe=missing</code> · <code>mechanical</code> class with a shared-contract file visible in the classification record · audit shows auto-approve with no probe result or human attestation.</p>
 <h2 id="flow">Flow</h2>
 <pre class="mermaid">flowchart TD
-  Pull[Pod pulled Ready] --&gt; Hole{Can execute?}
-  Hole --&gt;|yes| Build
-  Hole --&gt;|no| Bounce[bounce-from-pod + code]
-  Bounce --&gt; Sender[Needs_AC → sender SLA]
-  Sender --&gt; AI[Re-score]
-  AI --&gt; Green{policy auto-Ready?}
-  Green --&gt;|yes| Ready
-  Green --&gt;|no| Still[sender again]
-  Still --&gt; Disp{dispute / SLA / bounce≥2?}
-  Disp --&gt;|yes| PM[Exception queue]
-  Disp --&gt;|no| Sender</pre>
+  C[Classified mechanical] --&gt; F[Gate checks shape only]
+  F --&gt;|small diff, no runtime file| A[Auto-approve]
+  A --&gt; R[Semantic blast radius reaches shared env]
+  R --&gt; D[Damage surfaces later, no human saw it]
+  D --&gt; P[Add blast-radius probe at classify]
+  D --&gt; H[PM reviews or reverts surface change]</pre>
 <h2 id="solution">Solution</h2>
-<p>Class <code>REWORK</code> + <code>bounce-from-pod</code> to <strong>sender</strong> (<a href="../02.gate/01.classification-and-gate.html">Gate</a>).</p>
-<ol>
-<li>Do <strong>not</strong> assign the TDM as default bounce owner.  </li>
-<li>Assign <strong>original reporter / BA</strong>. Packet: what failed, cite, what’s needed (DontPassMessage).  </li>
-<li>Re-score; auto-Ready if still in policy.  </li>
-<li>Silent / dispute / bounce≥2 → <a href="24.edge-silent-sender-dispute.html">52</a>. TDM 30-minute sharpen <strong>or</strong> reject.  </li>
-<li>If work already shipped wrong: reopen + honest status, then retro on <strong>rubric</strong> (maybe remove author from trusted).</li>
-</ol>
-<h2 id="audit">Audit</h2>
-<p><code>path=pod-bounce</code> on the same envelope as <a href="../04.playbooks/15.case-auto-ready-vs-pm-exception.html">24</a>.</p>
+<p>Add a mandatory blast-radius probe to classify for any slice touching shared contract/config/routing/rename/deletion surfaces. Diff size is irrelevant. Treat <code>mechanical</code> as a claim that itself needs evidence; record the probe result in the classification record so audit can show why auto was safe. Auto-approve stays allowed only when the probe is empty or explicitly human-attested. Default deny on those surfaces when the probe is missing, with reason <code>misclassified-slice</code> — overturn, not sender <code>REWORK</code>.</p>
 <h2 id="related">Related</h2>
-<p><a href="../02.gate/01.classification-and-gate.html">Gate</a> <a href="../04.playbooks/02.case-jira-hierarchy-quality.html">11</a> <a href="../04.playbooks/13.case-dontpassmessage.html">22</a> <a href="../04.playbooks/15.case-auto-ready-vs-pm-exception.html">24</a> <a href="24.edge-silent-sender-dispute.html">52</a></p>
+<p><a href="../02.gate/01.classification-and-gate.html">Gate</a> <a href="../04.playbooks/15.case-auto-ready-vs-pm-exception.html">24</a> <a href="10.edge-ai-hallucinated-ac.html">38</a> <a href="11.edge-auto-move-without-pm.html">39</a> <a href="15.edge-batch-classify-exceptions.html">15</a></p>
 </article>
-                    <nav class="page-nav-footer" aria-label="Pages in this section"><a class="page-nav-link page-nav-prev" href="../05.failure/16.edge-ready-externally-blocked.html"><span class="page-nav-kicker">Previous</span><span class="page-nav-title">16 Ready but externally blocked</span></a><a class="page-nav-link page-nav-next" href="../05.failure/18.edge-duplicate-ask.html"><span class="page-nav-kicker">Next</span><span class="page-nav-title">18 duplicate ask (`DUPLICATE`)</span></a></nav>
+                    <nav class="page-nav-footer" aria-label="Pages in this section"><a class="page-nav-link page-nav-prev" href="../05.failure/24.edge-silent-sender-dispute.html"><span class="page-nav-kicker">Previous</span><span class="page-nav-title">24 silent sender / AC dispute (exception on `REWORK`)</span></a><span class="page-nav-spacer"></span></nav>
                     <footer class="page-utility">
         <a href="../00.index.html">Markdown hub</a>
         <span class="page-utility-note">raw md/ source index — for maintainers</span>
@@ -105,7 +92,7 @@
             <aside class="right-sidebar" aria-label="On this page">
         <div class="right-sidebar-panel">
             <h2>On this page</h2>
-            <ul class="right-sidebar-toc"><li class="toc-level-2"><a href="#symptom">Symptom</a></li><li class="toc-level-2"><a href="#detect">Detect</a></li><li class="toc-level-2"><a href="#flow">Flow</a></li><li class="toc-level-2"><a href="#solution">Solution</a></li><li class="toc-level-2"><a href="#audit">Audit</a></li><li class="toc-level-2"><a href="#related">Related</a></li></ul>
+            <ul class="right-sidebar-toc"><li class="toc-level-2"><a href="#symptom">Symptom</a></li><li class="toc-level-2"><a href="#detect">Detect</a></li><li class="toc-level-2"><a href="#flow">Flow</a></li><li class="toc-level-2"><a href="#solution">Solution</a></li><li class="toc-level-2"><a href="#related">Related</a></li></ul>
         </div>
     </aside>
         </div>

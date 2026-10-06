@@ -10,284 +10,501 @@
   </head>
   <body>
     <outline text="APS Method v2.0.0-method"
-      _note="Portable OS for agentic delivery. SoT: agentic-pm-standard/md/. Import in MindNode: File → Import. Catalog ids (10–27, 30–52) live in H1/YAML — file ordinals (#) differ per folder (see naming-standard).">
+      _note="Portable OS for agentic delivery. SoT: agentic-pm-standard/md/. Branches mirror the site navigation (Orient · Run · Apply · Reference) so the map and the sidebar agree. Every _note is a real md/ path. Import in MindNode: File → Import.">
 
-      <outline text="North star and law"
-        _note="When AI reads, classifies, and drafts under published policy, people own exceptions, sampling, and the rule—not every ticket in the inbox.">
-        <outline text="Immutable law — AI reads/classifies/drafts; GREEN under policy; RED to sender"
-          _note="md/06.laws/01.immutable-law.md"/>
-        <outline text="Exception-based DoR — not a PM mailbox"
-          _note="md/00.start/01.story-spine.md"/>
-        <outline text="SoT over nucleus — docs + tracker + CI beat chat/agent"
-          _note="P4 · md/06.laws/02.delivery-planes.md"/>
+      <!-- ============ ORIENT ============ -->
+      <outline text="Orient — what this is, and the law"
+        _note="Read first. One pass here makes the rest of the pack navigable.">
+
+        <outline text="Decision board (section index)"
+          _note="md/00.start/00.index.md">
+          <outline text="01 Story spine — 15-minute read"
+            _note="md/00.start/01.story-spine.md"/>
+          <outline text="02 At a glance — the method on one page"
+            _note="md/00.start/02.at-a-glance.md"/>
+          <outline text="04 Lifecycle and planes — where the pack slots in"
+            _note="md/00.start/04.lifecycle-and-planes.md"/>
+          <outline text="05 Practices and risks — the catalog thresholds"
+            _note="md/00.start/05.practices-and-risks.md"/>
+          <outline text="06 Reading by role — PM · BA · pod · security · executive"
+            _note="md/00.start/06.reading-by-role.md"/>
+          <outline text="07 Metadata schema — aps_id · stage · class"
+            _note="md/00.start/07.metadata-schema.md"/>
+          <outline text="08 Glossary — key APS terms"
+            _note="md/00.start/08.glossary.md"/>
+          <outline text="09 Portfolio lens — 90-second scan"
+            _note="md/00.start/09.portfolio-lens.md"/>
+          <outline text="10 Presentation kit — one talk, no wiki needed"
+            _note="md/00.start/10.presentation-kit.md"/>
+        </outline>
+
+        <outline text="Principles (section index)"
+          _note="md/06.laws/00.index.md">
+          <outline text="Seven APS principles P1–P7"
+            _note="md/00.start/03.principles.md"/>
+          <outline text="Immutable law — AI reads/classifies/drafts; GREEN under policy; RED to sender"
+            _note="md/06.laws/01.immutable-law.md"/>
+          <outline text="Delivery planes A / B / B′ / C"
+            _note="md/06.laws/02.delivery-planes.md"/>
+          <outline text="Tailoring profiles — add checks, never remove law"
+            _note="md/06.laws/03.tailoring-profiles.md"/>
+          <outline text="Audit metrics forbidden"
+            _note="md/06.laws/04.audit-metrics-forbidden.md"/>
+          <outline text="Naming standard — file # vs catalog Cat"
+            _note="md/06.laws/05.naming-standard.md"/>
+        </outline>
+
       </outline>
 
-      <outline text="Start here (reading path)">
-        <outline text="01 Story spine — 15 min"
-          _note="md/00.start/01.story-spine.md"/>
-        <outline text="02 At a glance — one-page method"
-          _note="md/00.start/02.at-a-glance.md"/>
-        <outline text="00 Start index"
-          _note="md/00.start/00.index.md"/>
-        <outline text="09 Portfolio lens · 10 Presentation kit"
-          _note="md/00.start/09.portfolio-lens.md · 10.presentation-kit.md"/>
-        <outline text="HTML wiki (generated)"
-          _note="html/index.html — cd scripts &amp;&amp; bun run build"/>
+      <!-- ============ RUN ============ -->
+      <outline text="Run — how work flows, gets gated, and executes">
+
+        <outline text="Process flows (section index)"
+          _note="md/01.flow/00.index.md">
+          <outline text="01 Master value stream"
+            _note="md/01.flow/01.master-value-stream.md"/>
+          <outline text="02 Intake funnel"
+            _note="md/01.flow/02.intake-funnel.md"/>
+          <outline text="03 Classify to Ready"
+            _note="md/01.flow/03.classify-to-ready.md"/>
+          <outline text="04 Ready-pull → build → review"
+            _note="md/01.flow/04.ready-pull-build-review.md"/>
+          <outline text="05 QC and ship"
+            _note="md/01.flow/05.qc-and-ship.md"/>
+          <outline text="06 Agent execution pipeline"
+            _note="md/01.flow/06.agent-execution-pipeline.md"/>
+          <outline text="07 Trust ladder phases"
+            _note="md/01.flow/07.trust-ladder-phases.md"/>
+          <outline text="08 Lifecycle (nested)"
+            _note="md/01.flow/08.lifecycle/00.index.md">
+            <outline text="01 Entry — funnel outside-in"
+              _note="md/01.flow/08.lifecycle/01.entry/00.index.md">
+              <outline text="01 Overview — what APS is"
+                _note="md/01.flow/08.lifecycle/01.entry/01.overview.md"/>
+              <outline text="02 Funnel — outside → inside"
+                _note="md/01.flow/08.lifecycle/01.entry/02.funnel-outside-in.md"/>
+            </outline>
+            <outline text="02 Increment — bootstrap · wave go/no-go"
+              _note="md/01.flow/08.lifecycle/02.increment/00.index.md">
+              <outline text="01 Bootstrap"
+                _note="md/01.flow/08.lifecycle/02.increment/01.bootstrap.md"/>
+              <outline text="02 Wave go/no-go"
+                _note="md/01.flow/08.lifecycle/02.increment/02.wave-go-nogo.md"/>
+            </outline>
+            <outline text="03 Slice — pre-flight · go/no-go · BIP/FIP"
+              _note="md/01.flow/08.lifecycle/03.slice/00.index.md">
+              <outline text="01 Pre-flight"
+                _note="md/01.flow/08.lifecycle/03.slice/01.pre-flight.md"/>
+              <outline text="02 Slice go/no-go"
+                _note="md/01.flow/08.lifecycle/03.slice/02.go-nogo.md"/>
+              <outline text="03 BIP / FIP"
+                _note="md/01.flow/08.lifecycle/03.slice/03.bip-fip.md"/>
+            </outline>
+          </outline>
+        </outline>
+
+        <outline text="Quality gate (section index)"
+          _note="md/02.gate/00.index.md">
+          <outline text="01 Classification and gate"
+            _note="md/02.gate/01.classification-and-gate.md"/>
+          <outline text="02 Rubric — documents (requirements, assessments, SoW)"
+            _note="md/02.gate/02.rubric-document.md"/>
+          <outline text="03 Rubric — Jira hierarchy"
+            _note="md/02.gate/03.rubric-tracker-hierarchy.md"/>
+          <outline text="04 Gate artifact flow"
+            _note="md/02.gate/04.gate-artifact-flow.md"/>
+          <outline text="05 Tracker state machine"
+            _note="md/02.gate/05.tracker-state-machine.md"/>
+        </outline>
+
+        <outline text="Factory (section index)"
+          _note="md/03.factory/00.index.md">
+          <outline text="01 Core (nested)"
+            _note="md/03.factory/01.core/00.index.md">
+            <outline text="01 Concepts — AI-operated · agent factory · PM seat"
+              _note="md/03.factory/01.core/01.concepts.md"/>
+            <outline text="02 RED / GREEN loop"
+              _note="md/03.factory/01.core/02.red-green-loop.md"/>
+            <outline text="03 Planes"
+              _note="md/03.factory/01.core/03.planes.md"/>
+          </outline>
+          <outline text="02 Tracker law"
+            _note="md/03.factory/02.tracker-law.md"/>
+          <outline text="03 Agent factory — BIND → verify → HIL"
+            _note="md/03.factory/03.agent-factory.md"/>
+        </outline>
+
       </outline>
 
-      <outline text="Principles P1–P7"
-        _note="md/00.start/03.principles.md · md/06.laws/00.index.md">
-        <outline text="P1 Exception-based readiness"
-          _note="Green only under policy; else typed exception path"/>
-        <outline text="P2 Classify before commit"
-          _note="No Ready without class + commit_path"/>
-        <outline text="P3 Sender–PM–Pod triad"
-          _note="Red→sender; yellow→PM; pod pulls Ready"/>
-        <outline text="P4 SoT over nucleus"
-          _note="Docs + tracker + CI beat chat/agent"/>
-        <outline text="P5 Plane integrity A / B / B′ / C"
-          _note="Govern · build · QC execute · ship (human)"/>
-        <outline text="P6 Stage-gated evidence"
-          _note="Eight product stages; RED before GREEN; Done=log"/>
-        <outline text="P7 Executable knowledge"
-          _note="Checklists and matrices, not prose-only process"/>
+      <!-- ============ APPLY ============ -->
+      <outline text="Apply — what to do in a given situation">
+
+        <outline text="Practices (section index) — playbooks 10–27, by topic"
+          _note="md/04.playbooks/00.index.md · # = file ordinal · Cat = catalog playbook id">
+
+          <outline text="requirements">
+            <outline text="Cat 10 · #01 Document intake and verify"
+              _note="md/04.playbooks/01.case-document-intake-verify.md"/>
+            <outline text="Cat 19 · #10 SQL / Excel / CSV reports"
+              _note="md/04.playbooks/10.case-data-sql-excel-report.md"/>
+            <outline text="Cat 20 · #11 SoW / assessment vs backlog"
+              _note="md/04.playbooks/11.case-sow-assessment-vs-backlog.md"/>
+          </outline>
+
+          <outline text="delivery">
+            <outline text="Cat 11 · #02 Jira hierarchy quality"
+              _note="md/04.playbooks/02.case-jira-hierarchy-quality.md"/>
+            <outline text="Cat 17 · #08 Cross-pod dependency and Blocked"
+              _note="md/04.playbooks/08.case-dependency-blocked.md"/>
+            <outline text="Cat 23 · #14 Weekly blocked / risk scan"
+              _note="md/04.playbooks/14.case-weekly-blocked-scan.md"/>
+          </outline>
+
+          <outline text="analysis">
+            <outline text="Cat 12 · #03 Meet → MoM → draft tickets"
+              _note="md/04.playbooks/03.case-meet-to-ready.md"/>
+            <outline text="Cat 25 · #16 Spike (unknown how, timeboxed)"
+              _note="md/04.playbooks/16.case-spike-timebox.md"/>
+          </outline>
+
+          <outline text="quality">
+            <outline text="Cat 21 · #12 Definition of Done and evidence"
+              _note="md/04.playbooks/12.case-dod-evidence.md"/>
+          </outline>
+
+          <outline text="architecture">
+            <outline text="Cat 13 · #04 Figma / Penpot ↔ ticket drift"
+              _note="md/04.playbooks/04.case-figma-ticket-drift.md"/>
+          </outline>
+
+          <outline text="data">
+            <outline text="Cat 14 · #05 Source-of-truth conflict"
+              _note="md/04.playbooks/05.case-sot-conflict.md"/>
+          </outline>
+
+          <outline text="execution">
+            <outline text="Cat 15 · #06 PR / CI vs Jira ticket"
+              _note="md/04.playbooks/06.case-pr-ci-vs-ticket.md"/>
+          </outline>
+
+          <outline text="governance">
+            <outline text="Cat 18 · #09 Mid-sprint change request"
+              _note="md/04.playbooks/09.case-mid-sprint-change.md"/>
+            <outline text="Cat 24 · #15 Auto-Ready vs PM exception vs bounce-to-sender"
+              _note="md/04.playbooks/15.case-auto-ready-vs-pm-exception.md"/>
+            <outline text="Cat 27 · #18 Live incident is not a Ready story"
+              _note="md/04.playbooks/18.case-incident-not-story.md"/>
+          </outline>
+
+          <outline text="stakeholder">
+            <outline text="Cat 16 · #07 Honest status pack (leads)"
+              _note="md/04.playbooks/07.case-status-pack.md"/>
+            <outline text="Cat 22 · #13 DontPassMessage (raw ping → usable packet)"
+              _note="md/04.playbooks/13.case-dontpassmessage.md"/>
+            <outline text="Cat 26 · #17 Two departments, one slot (TRADEOFF)"
+              _note="md/04.playbooks/17.case-dept-tradeoff.md"/>
+          </outline>
+
+        </outline>
+
+        <outline text="Risks (section index) — edges 30–53, by failure theme"
+          _note="md/05.failure/00.index.md · # = file ordinal · Cat = catalog edge id">
+
+          <outline text="Scenario catalog (~41 elite situations)"
+            _note="md/05.failure/01.scenario-catalog.md"/>
+
+          <outline text="Intake quality">
+            <outline text="Cat 30 · #02 Unreadable OCR (scan PDF / image)"
+              _note="md/05.failure/02.edge-unreadable-ocr.md"/>
+            <outline text="Cat 31 · #03 Huge document, thin signal"
+              _note="md/05.failure/03.edge-huge-doc-thin-signal.md"/>
+            <outline text="Cat 32 · #04 Verbal AC in the meeting"
+              _note="md/05.failure/04.edge-meeting-verbal-ac.md"/>
+            <outline text="Cat 37 · #09 Filename version chaos"
+              _note="md/05.failure/09.edge-filename-version-chaos.md"/>
+            <outline text="Cat 46 · #18 Duplicate ask"
+              _note="md/05.failure/18.edge-duplicate-ask.md"/>
+            <outline text="Cat 48 · #20 Reject wrong artifact"
+              _note="md/05.failure/20.edge-reject-wrong-artifact.md"/>
+          </outline>
+
+          <outline text="Analysis quality">
+            <outline text="Cat 33 · #05 AC is actually how"
+              _note="md/05.failure/05.edge-ac-is-how.md"/>
+          </outline>
+
+          <outline text="Tracker shape">
+            <outline text="Cat 34 · #06 Epic disguised as one story"
+              _note="md/05.failure/06.edge-epic-as-one-story.md"/>
+            <outline text="Cat 35 · #07 One subtask, two pods"
+              _note="md/05.failure/07.edge-subtask-two-pods.md"/>
+          </outline>
+
+          <outline text="Policy and Ready">
+            <outline text="Cat 38 · #10 AI-hallucinated AC"
+              _note="md/05.failure/10.edge-ai-hallucinated-ac.md"/>
+            <outline text="Cat 39 · #11 Auto-move without PM"
+              _note="md/05.failure/11.edge-auto-move-without-pm.md"/>
+            <outline text="Cat 43 · #15 Batch classify exceptions at scale"
+              _note="md/05.failure/15.edge-batch-classify-exceptions.md"/>
+            <outline text="Cat 53 · #25 Auto-approve misclassified slice"
+              _note="md/05.failure/25.edge-auto-approve-misclassified-slice.md"/>
+          </outline>
+
+          <outline text="Source truth">
+            <outline text="Cat 40 · #12 Stale paste vs Drive"
+              _note="md/05.failure/12.edge-stale-paste-vs-drive.md"/>
+          </outline>
+
+          <outline text="Delivery evidence">
+            <outline text="Cat 41 · #13 Jira ↔ Git key mismatch"
+              _note="md/05.failure/13.edge-jira-git-key-mismatch.md"/>
+            <outline text="Cat 44 · #16 Ready but externally blocked"
+              _note="md/05.failure/16.edge-ready-externally-blocked.md"/>
+            <outline text="Cat 50 · #22 Env / ACL access blocked"
+              _note="md/05.failure/22.edge-env-access-blocked.md"/>
+          </outline>
+
+          <outline text="Security">
+            <outline text="Cat 36 · #08 PII in doc or CSV"
+              _note="md/05.failure/08.edge-pii-quarantine.md"/>
+            <outline text="Cat 42 · #14 SQL prod write"
+              _note="md/05.failure/14.edge-sql-prod-write.md"/>
+            <outline text="Cat 49 · #21 Secret leak"
+              _note="md/05.failure/21.edge-secret-leak.md"/>
+            <outline text="Cat 51 · #23 Irreversible change"
+              _note="md/05.failure/23.edge-irreversible-change.md"/>
+          </outline>
+
+          <outline text="Roles and routing">
+            <outline text="Cat 45 · #17 Pod bounce to sender"
+              _note="md/05.failure/17.edge-pod-bounce-to-sender.md"/>
+            <outline text="Cat 52 · #24 Silent sender dispute"
+              _note="md/05.failure/24.edge-silent-sender-dispute.md"/>
+          </outline>
+
+          <outline text="Defer / WIP / funding">
+            <outline text="Cat 47 · #19 Defer WIP unfunded"
+              _note="md/05.failure/19.edge-defer-wip-unfunded.md"/>
+          </outline>
+
+        </outline>
+
+        <outline text="Artifacts (section index) — templates"
+          _note="md/07.templates/00.index.md">
+
+          <outline text="01 Requirements"
+            _note="md/07.templates/01.requirements/00.index.md">
+            <outline text="01 BRD"
+              _note="md/07.templates/01.requirements/01.brd.md"/>
+            <outline text="02 PRD"
+              _note="md/07.templates/01.requirements/02.prd.md"/>
+            <outline text="03 FRD"
+              _note="md/07.templates/01.requirements/03.frd.md"/>
+            <outline text="04 SRS"
+              _note="md/07.templates/01.requirements/04.srs.md"/>
+          </outline>
+
+          <outline text="02 Analysis"
+            _note="md/07.templates/02.analysis/00.index.md">
+            <outline text="01 User story"
+              _note="md/07.templates/02.analysis/01.user-story.md"/>
+            <outline text="02 Acceptance criteria"
+              _note="md/07.templates/02.analysis/02.acceptance-criteria.md"/>
+            <outline text="03 QC scenario matrix"
+              _note="md/07.templates/02.analysis/03.qc-scenario-matrix.md"/>
+            <outline text="04 E2E spine"
+              _note="md/07.templates/02.analysis/04.e2e-spine.md"/>
+            <outline text="05 Business flow layout"
+              _note="md/07.templates/02.analysis/05.business-flow-layout.md"/>
+            <outline text="06 QC scenario flows"
+              _note="md/07.templates/02.analysis/06.qc-scenario-flows.md"/>
+            <outline text="07 Flow shard"
+              _note="md/07.templates/02.analysis/07.flow-shard.md"/>
+            <outline text="08 Case catalog"
+              _note="md/07.templates/02.analysis/08.case-catalog.md"/>
+            <outline text="09 Test strategy / NFR"
+              _note="md/07.templates/02.analysis/09.test-strategy-nfr.md"/>
+          </outline>
+
+          <outline text="03 Architecture"
+            _note="md/07.templates/03.architecture/00.index.md">
+            <outline text="01 API hub outline"
+              _note="md/07.templates/03.architecture/01.api-hub-outline.md"/>
+            <outline text="02 Data model shard"
+              _note="md/07.templates/03.architecture/02.data-model-shard.md"/>
+          </outline>
+
+          <outline text="04 WBS"
+            _note="md/07.templates/04.wbs/00.index.md">
+            <outline text="01 Atomic slice pack"
+              _note="md/07.templates/04.wbs/01.atomic-slice-pack.md"/>
+            <outline text="02 Level files outline"
+              _note="md/07.templates/04.wbs/02.level-files-outline.md"/>
+            <outline text="03 RED tests packet"
+              _note="md/07.templates/04.wbs/03.red-tests-packet.md"/>
+            <outline text="04 BIP / FIP skeleton"
+              _note="md/07.templates/04.wbs/04.bip-fip-skeleton.md"/>
+            <outline text="05 Module technical pack"
+              _note="md/07.templates/04.wbs/05.module-technical-pack.md"/>
+            <outline text="06 Epic quality-gate trio"
+              _note="md/07.templates/04.wbs/06.epic-quality-gate-trio.md"/>
+          </outline>
+
+          <outline text="05 Delivery"
+            _note="md/07.templates/05.delivery/00.index.md">
+            <outline text="01 Definition of Done"
+              _note="md/07.templates/05.delivery/01.definition-of-done.md"/>
+            <outline text="02 Release gate"
+              _note="md/07.templates/05.delivery/02.release-gate.md"/>
+          </outline>
+
+          <outline text="06 Forms"
+            _note="md/07.templates/06.forms/00.index.md">
+            <outline text="01 Classify handoff"
+              _note="md/07.templates/06.forms/01.classify-handoff.md"/>
+            <outline text="02 PM exception stamp"
+              _note="md/07.templates/06.forms/02.pm-exception-stamp.md"/>
+            <outline text="03 Human review packet"
+              _note="md/07.templates/06.forms/03.human-review-packet.md"/>
+            <outline text="04 Status pack weekly"
+              _note="md/07.templates/06.forms/04.status-pack-weekly.md"/>
+            <outline text="05 Pre-flight slice"
+              _note="md/07.templates/06.forms/05.pre-flight-slice.md"/>
+            <outline text="06 Slice go/no-go"
+              _note="md/07.templates/06.forms/06.slice-go-nogo.md"/>
+            <outline text="07 Master registry matrix"
+              _note="md/07.templates/06.forms/07.master-registry-matrix.md"/>
+            <outline text="08 Epic ticket map skeleton"
+              _note="md/07.templates/06.forms/08.epic-ticket-map-skeleton.md"/>
+          </outline>
+
+        </outline>
+
       </outline>
 
-      <outline text="Lifecycle and rhythm"
-        _note="md/00.start/04.lifecycle-and-planes.md · md/01.flow/08.lifecycle/">
-        <outline text="Outside-in funnel"
-          _note="noise → intake → classify → commit path → Ready → factory → ship → audit"/>
-        <outline text="Portfolio rhythm"
-          _note="feature increment → wave cut → slice (one primary service/app)"/>
-        <outline text="01.entry — funnel outside-in"
-          _note="md/01.flow/08.lifecycle/01.entry/"/>
-        <outline text="02.increment — bootstrap · wave go/no-go"
-          _note="md/01.flow/08.lifecycle/02.increment/"/>
-        <outline text="03.slice — pre-flight · go/no-go · BIP/FIP"
-          _note="md/01.flow/08.lifecycle/03.slice/"/>
-        <outline text="Eight product stages (+ B′ + HIL)"
-          _note="md/09.lookup/01.meta/02.lifecycle-eight-stages.md">
-          <outline text="1 Requirements"/>
-          <outline text="2 Analysis (US · AC · case catalog)"/>
-          <outline text="3 QC design (matrix · tiers)"/>
-          <outline text="4 API and interface"/>
-          <outline text="5 Data design"/>
-          <outline text="6 BIP/FIP + WBS readiness"/>
-          <outline text="7 Test spec (RED)"/>
-          <outline text="8 Implement (RED→GREEN)"/>
-          <outline text="B′ QC execute (after qualified DEV)"
-            _note="Plane B′ — not a ninth product stage"/>
-          <outline text="9 HIL and delivery closure"
-            _note="Human ship only — plane C"/>
-        </outline>
-      </outline>
+      <!-- ============ REFERENCE ============ -->
+      <outline text="Reference — context and the standard">
 
-      <outline text="Governance planes and signals"
-        _note="md/06.laws/02.delivery-planes.md · md/03.factory/01.core/">
-        <outline text="Plane A — govern and Ready"
-          _note="intake / docs-only — never In Progress"/>
-        <outline text="Plane B — build and verify"
-          _note="dev-runtime — never Story Done"/>
-        <outline text="Plane B′ — QC matrix execute"
-          _note="qc-runtime after qualified DEV Done"/>
-        <outline text="Plane C — ship (human only)"
-          _note="PR merge · Story Done — agent default none"/>
-        <outline text="RED / GREEN loop"
-          _note="md/03.factory/01.core/02.red-green-loop.md"/>
-        <outline text="Trust ladder phases"
-          _note="md/01.flow/07.trust-ladder-phases.md"/>
-        <outline text="Agent factory — verify · HIL · no agent Done"
-          _note="md/03.factory/03.agent-factory.md"/>
-      </outline>
+        <outline text="Platform (section index) — zones Z0–Z6"
+          _note="md/08.platform/00.index.md">
+          <outline text="01 Overall landscape — zones"
+            _note="md/08.platform/01.zones-landscape.md"/>
+          <outline text="02 Operating model"
+            _note="md/08.platform/02.operating-model.md"/>
+          <outline text="03 Nucleus parallel stacks"
+            _note="md/08.platform/03.nucleus-parallel-stacks.md"/>
+          <outline text="04 Alternate cockpit"
+            _note="md/08.platform/04.alternate-cockpit.md"/>
+          <outline text="05 MCP connectors map"
+            _note="md/08.platform/05.mcp-connectors-map.md"/>
+          <outline text="06 Departments and actors"
+            _note="md/08.platform/06.departments-actors.md"/>
+          <outline text="07 RAG architecture"
+            _note="md/08.platform/07.rag-architecture.md"/>
+          <outline text="08 Security and PII governance"
+            _note="md/08.platform/08.security-pii-governance.md"/>
+        </outline>
 
-      <outline text="Flow, gate, and factory (md/01–03)"
-        _note="01.flow · 02.gate · 03.factory">
-        <outline text="01.flow — value stream">
-          <outline text="Master value stream"
-            _note="01.master-value-stream.md"/>
-          <outline text="Intake funnel · classify-to-ready"
-            _note="02.intake-funnel · 03.classify-to-ready"/>
-          <outline text="Ready-pull · build · review"
-            _note="04.ready-pull-build-review.md"/>
-          <outline text="QC and ship · agent execution pipeline"
-            _note="05.qc-and-ship · 06.agent-execution-pipeline"/>
-        </outline>
-        <outline text="02.gate — classification and rubric">
-          <outline text="Classification and gate"
-            _note="01.classification-and-gate.md"/>
-          <outline text="Rubric document · tracker hierarchy · artifact flow · state machine"
-            _note="02–05 in 02.gate/"/>
-        </outline>
-        <outline text="03.factory — core and factory">
-          <outline text="Concepts · planes · red-green"
-            _note="01.core/"/>
-          <outline text="Tracker law · agent factory"
-            _note="02.tracker-law.md · 03.agent-factory.md"/>
-        </outline>
-      </outline>
+        <outline text="SDLC standard (section index) — standalone object model"
+          _note="md/09.lookup/00.index.md">
 
-      <outline text="Lookup pack (md/09.lookup)"
-        _note="SDLC object model — WBS · tracker · phases">
-        <outline text="01.meta — landscape · eight stages · SoT · OM map"
-          _note="01.meta/"/>
-        <outline text="02.wbs — levels · trace · atomic subtask · coverage · slice packet"
-          _note="02.wbs/"/>
-        <outline text="03.tracker — hierarchy · links · board law · registry · sync"
-          _note="03.tracker/"/>
-        <outline text="04.phases — requirements through design-trace"
-          _note="requirements · analysis · architecture · qc-lane · delivery · agent-native · design-trace"/>
-      </outline>
+          <outline text="01 Meta"
+            _note="md/09.lookup/01.meta/00.index.md">
+            <outline text="01 Folder landscape"
+              _note="md/09.lookup/01.meta/01.folder-landscape.md"/>
+            <outline text="02 Lifecycle — eight stages"
+              _note="md/09.lookup/01.meta/02.lifecycle-eight-stages.md"/>
+            <outline text="03 Domain increment"
+              _note="md/09.lookup/01.meta/03.domain-increment.md"/>
+            <outline text="04 Source of truth"
+              _note="md/09.lookup/01.meta/04.source-of-truth.md"/>
+            <outline text="05 Operating model map"
+              _note="md/09.lookup/01.meta/05.operating-model-map.md"/>
+          </outline>
 
-      <outline text="Playbooks — catalog 10–27"
-        _note="md/04.playbooks/00.index.md · # = file ordinal · Cat = playbook id">
-        <outline text="Align and intake">
-          <outline text="Cat 10 · #01 document intake and verify"
-            _note="md/04.playbooks/01.case-document-intake-verify.md"/>
-          <outline text="Cat 12 · #03 meet to MoM to draft tickets"
-            _note="md/04.playbooks/03.case-meet-to-ready.md"/>
-          <outline text="Cat 19 · #10 SQL / Excel / CSV reports"
-            _note="md/04.playbooks/10.case-data-sql-excel-report.md"/>
-          <outline text="Cat 20 · #11 SoW / assessment vs backlog"
-            _note="md/04.playbooks/11.case-sow-assessment-vs-backlog.md"/>
-          <outline text="Cat 22 · #13 DontPassMessage (raw ping)"
-            _note="md/04.playbooks/13.case-dontpassmessage.md"/>
-        </outline>
-        <outline text="Assure and classify">
-          <outline text="Cat 11 · #02 Jira hierarchy quality"
-            _note="md/04.playbooks/02.case-jira-hierarchy-quality.md"/>
-          <outline text="Cat 13 · #04 design ticket drift"
-            _note="md/04.playbooks/04.case-figma-ticket-drift.md"/>
-          <outline text="Cat 14 · #05 source-of-truth conflict"
-            _note="md/04.playbooks/05.case-sot-conflict.md"/>
-          <outline text="Cat 18 · #09 mid-sprint change"
-            _note="md/04.playbooks/09.case-mid-sprint-change.md"/>
-          <outline text="Cat 24 · #15 auto-Ready vs PM exception"
-            _note="md/04.playbooks/15.case-auto-ready-vs-pm-exception.md"/>
-          <outline text="Cat 25 · #16 spike timeboxed"
-            _note="md/04.playbooks/16.case-spike-timebox.md"/>
-          <outline text="Cat 26 · #17 dept tradeoff (TRADEOFF)"
-            _note="md/04.playbooks/17.case-dept-tradeoff.md"/>
-          <outline text="Cat 27 · #18 incident not a Ready story"
-            _note="md/04.playbooks/18.case-incident-not-story.md"/>
-        </outline>
-        <outline text="Mobilize">
-          <outline text="Cat 17 · #08 cross-pod dependency blocked"
-            _note="md/04.playbooks/08.case-dependency-blocked.md"/>
-        </outline>
-        <outline text="Deliver">
-          <outline text="Cat 15 · #06 PR / CI vs Jira ticket"
-            _note="md/04.playbooks/06.case-pr-ci-vs-ticket.md"/>
-        </outline>
-        <outline text="Govern and close">
-          <outline text="Cat 16 · #07 honest status pack"
-            _note="md/04.playbooks/07.case-status-pack.md"/>
-          <outline text="Cat 21 · #12 Definition of Done evidence"
-            _note="md/04.playbooks/12.case-dod-evidence.md"/>
-          <outline text="Cat 23 · #14 weekly blocked scan"
-            _note="md/04.playbooks/14.case-weekly-blocked-scan.md"/>
-        </outline>
-      </outline>
+          <outline text="02 WBS"
+            _note="md/09.lookup/02.wbs/00.index.md">
+            <outline text="01 Level files"
+              _note="md/09.lookup/02.wbs/01.level-files.md"/>
+            <outline text="02 Hierarchy and trace"
+              _note="md/09.lookup/02.wbs/02.hierarchy-and-trace.md"/>
+            <outline text="03 Atomic subtask law"
+              _note="md/09.lookup/02.wbs/03.atomic-subtask-law.md"/>
+            <outline text="04 Coverage registry"
+              _note="md/09.lookup/02.wbs/04.coverage-registry.md"/>
+            <outline text="05 Task slice packet"
+              _note="md/09.lookup/02.wbs/05.task-slice-packet.md"/>
+          </outline>
 
-      <outline text="Failure — catalog 30–52"
-        _note="md/05.failure/00.index.md · # = file ordinal · Cat = edge id">
-        <outline text="Scenario catalog (~40 situations)"
-          _note="md/05.failure/01.scenario-catalog.md"/>
-        <outline text="Intake quality">
-          <outline text="Cat 30 · #02 unreadable OCR"
-            _note="QUARANTINE · edge-unreadable-ocr.md"/>
-          <outline text="Cat 31 · #03 huge doc thin signal"
-            _note="thin-signal"/>
-          <outline text="Cat 32 · #04 verbal AC in meeting"
-            _note="verbal-ac"/>
-          <outline text="Cat 37 · #09 filename version chaos"
-            _note="context"/>
-          <outline text="Cat 46 · #18 duplicate ask"
-            _note="DUPLICATE"/>
-          <outline text="Cat 48 · #20 reject wrong artifact"
-            _note="REJECT"/>
-        </outline>
-        <outline text="Analysis quality">
-          <outline text="Cat 33 · #05 AC is actually how"
-            _note="too-much-how"/>
-        </outline>
-        <outline text="Tracker shape">
-          <outline text="Cat 34 · #06 epic as one story"
-            _note="story-too-big"/>
-          <outline text="Cat 35 · #07 subtask two pods"
-            _note="cross-pod"/>
-        </outline>
-        <outline text="Policy and Ready">
-          <outline text="Cat 38 · #10 AI-hallucinated AC"
-            _note="uncited-claim"/>
-          <outline text="Cat 39 · #11 auto-move without PM"
-            _note="policy-bypass"/>
-          <outline text="Cat 43 · #15 batch classify at scale"
-            _note="scale"/>
-        </outline>
-        <outline text="Source truth">
-          <outline text="Cat 40 · #12 stale paste vs Drive"
-            _note="stale-source"/>
-        </outline>
-        <outline text="Delivery evidence">
-          <outline text="Cat 41 · #13 Jira key missing on PR"
-            _note="delivery-mismatch"/>
-          <outline text="Cat 44 · #16 Ready externally blocked"
-            _note="BLOCKED_EXT"/>
-          <outline text="Cat 50 · #22 env / ACL blocked"
-            _note="access"/>
-        </outline>
-        <outline text="Security">
-          <outline text="Cat 36 · #08 PII quarantine"
-            _note="QUARANTINE"/>
-          <outline text="Cat 42 · #14 SQL prod write"
-            _note="sql-prod"/>
-          <outline text="Cat 49 · #21 secret leak"
-            _note="secret"/>
-          <outline text="Cat 51 · #23 irreversible change"
-            _note="irreversible"/>
-        </outline>
-        <outline text="Roles and routing">
-          <outline text="Cat 45 · #17 pod bounce to sender"
-            _note="bounce-from-pod"/>
-          <outline text="Cat 52 · #24 silent sender dispute"
-            _note="dispute"/>
-        </outline>
-        <outline text="Defer / WIP / funding">
-          <outline text="Cat 47 · #19 defer WIP unfunded"
-            _note="DEFER"/>
-        </outline>
-      </outline>
+          <outline text="03 Tracker"
+            _note="md/09.lookup/03.tracker/00.index.md">
+            <outline text="01 Hierarchy and flow"
+              _note="md/09.lookup/03.tracker/01.hierarchy-and-flow.md"/>
+            <outline text="02 Link types — blocks / relates"
+              _note="md/09.lookup/03.tracker/02.link-types-blocks-relates.md"/>
+            <outline text="03 Board diagram law"
+              _note="md/09.lookup/03.tracker/03.board-diagram-law.md"/>
+            <outline text="04 Epic ticket matrix"
+              _note="md/09.lookup/03.tracker/04.epic-ticket-matrix.md"/>
+            <outline text="05 Story-subtask WBS dual plane"
+              _note="md/09.lookup/03.tracker/05.story-subtask-wbs-dual-plane.md"/>
+            <outline text="06 Story status rollup"
+              _note="md/09.lookup/03.tracker/06.story-status-rollup.md"/>
+            <outline text="07 Labels and quartet"
+              _note="md/09.lookup/03.tracker/07.labels-and-quartet.md"/>
+            <outline text="08 Master registry"
+              _note="md/09.lookup/03.tracker/08.master-registry.md"/>
+            <outline text="09 Program spine"
+              _note="md/09.lookup/03.tracker/09.program-spine.md"/>
+            <outline text="10 Sync after tracker change"
+              _note="md/09.lookup/03.tracker/10.sync-after-tracker-change.md"/>
+          </outline>
 
-      <outline text="Platform and zones (md/08.platform)"
-        _note="Agentic topology — not product-specific x79 unless tailored">
-        <outline text="00 Overall landscape — zones Z0–Z6"
-          _note="md/08.platform/01.zones-landscape.md"/>
-        <outline text="Nucleus · MCP · RACI · RAG · security"
-          _note="md/08.platform/00.index.md"/>
-      </outline>
+          <outline text="04 Phases"
+            _note="md/09.lookup/04.phases/00.index.md">
+            <outline text="01 Requirements"
+              _note="md/09.lookup/04.phases/01.requirements/00.index.md">
+              <outline text="01 Trace to analysis"
+                _note="md/09.lookup/04.phases/01.requirements/01.trace-to-analysis.md"/>
+            </outline>
+            <outline text="02 Analysis"
+              _note="md/09.lookup/04.phases/02.analysis/00.index.md">
+              <outline text="01 Scenario standard"
+                _note="md/09.lookup/04.phases/02.analysis/01.scenario-standard.md"/>
+              <outline text="02 Quality-control folder"
+                _note="md/09.lookup/04.phases/02.analysis/02.quality-control-folder.md"/>
+            </outline>
+            <outline text="03 Architecture"
+              _note="md/09.lookup/04.phases/03.architecture/00.index.md">
+              <outline text="01 C4 and contract gates"
+                _note="md/09.lookup/04.phases/03.architecture/01.c4-and-contract-gates.md"/>
+            </outline>
+            <outline text="04 QC lane"
+              _note="md/09.lookup/04.phases/04.qc-lane/00.index.md">
+              <outline text="01 Trigger matrix"
+                _note="md/09.lookup/04.phases/04.qc-lane/01.trigger-matrix.md"/>
+              <outline text="02 Execute checklist"
+                _note="md/09.lookup/04.phases/04.qc-lane/02.execute-checklist.md"/>
+            </outline>
+            <outline text="05 Delivery"
+              _note="md/09.lookup/04.phases/05.delivery/00.index.md">
+              <outline text="01 Closure shards"
+                _note="md/09.lookup/04.phases/05.delivery/01.closure-shards.md"/>
+            </outline>
+            <outline text="06 Agent-native"
+              _note="md/09.lookup/04.phases/06.agent-native/00.index.md">
+              <outline text="01 Grilling checklist"
+                _note="md/09.lookup/04.phases/06.agent-native/01.grilling-checklist.md"/>
+              <outline text="02 BIND → verify → save"
+                _note="md/09.lookup/04.phases/06.agent-native/02.bind-verify-save.md"/>
+            </outline>
+            <outline text="07 Design trace"
+              _note="md/09.lookup/04.phases/07.design-trace/00.index.md"/>
+          </outline>
 
-      <outline text="Templates and forms (md/07.templates)"
-        _note="Paste forms · WBS/tracker templates">
-        <outline text="Requirements · analysis · architecture shards"
-          _note="01–03"/>
-        <outline text="WBS · delivery · forms"
-          _note="04–06"/>
-      </outline>
+        </outline>
 
-      <outline text="Tailoring and naming law"
-        _note="Profiles add checks; they do not remove law">
-        <outline text="Tailoring profiles"
-          _note="md/06.laws/03.tailoring-profiles.md"/>
-        <outline text="Naming — file # vs catalog Cat"
-          _note="md/06.laws/05.naming-standard.md"/>
-        <outline text="Audit metrics forbidden"
-          _note="md/06.laws/04.audit-metrics-forbidden.md"/>
-      </outline>
-
-      <outline text="md/ folder map (source of truth)"
-        _note="STRUCTURE.md · README method diagram">
-        <outline text="00.start · 01.flow · 02.gate · 03.factory · 04.playbooks"/>
-        <outline text="05.failure · 06.laws · 07.templates · 08.platform · 09.lookup"/>
       </outline>
 
     </outline>

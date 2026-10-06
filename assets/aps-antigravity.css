@@ -384,14 +384,17 @@ body.page {
     padding: 0;
 }
 
-.sidebar-hub {
+.sidebar-block {
     list-style: none;
     margin: 0 0 1rem;
     padding: 0 0 0.85rem;
     border-bottom: 1px solid var(--sl-color-hairline-light);
 }
 
-.sidebar-hub-title {
+/* Block titles describe what is inside: "Global" holds global entries only, and each
+   group title is an intent axis. Never a section name over cross-cutting links. */
+.sidebar-block-title,
+.sidebar-group-title {
     margin: 0 0 0.5rem;
     padding: 0 0.5rem;
     font-size: 0.75rem;
@@ -402,14 +405,30 @@ body.page {
     color: #9aa0a6;
 }
 
-:root[data-theme='dark'] .sidebar-hub-title {
+:root[data-theme='dark'] .sidebar-block-title,
+:root[data-theme='dark'] .sidebar-group-title {
     color: #c4c7c5;
 }
 
-.sidebar-hub-links {
+.sidebar-block-list,
+.sidebar-group-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
     gap: 2px;
+}
+
+.sidebar-group {
+    list-style: none;
+    margin: 0 0 0.9rem;
+    padding: 0;
+}
+
+.sidebar-group + .sidebar-group {
+    padding-top: 0.6rem;
+    border-top: 1px solid var(--sl-color-hairline-light);
 }
 
 .nav-item.nav-hub {
@@ -575,6 +594,33 @@ body.page {
     display: block;
 }
 
+/* Utility footer — maintainer entries (raw md/ hub), not reader navigation. */
+.page-utility {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin: 2rem 0 0;
+    padding-top: 1rem;
+    border-top: 1px solid var(--sl-color-hairline-light);
+    font-size: 0.8125rem;
+}
+
+.page-utility a {
+    color: var(--sl-color-gray-2);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.page-utility a:hover {
+    color: var(--sl-color-text-accent);
+}
+
+.page-utility-note {
+    color: var(--sl-color-gray-3);
+    font-size: 0.75rem;
+}
+
 .nav-folder {
     list-style: none;
     margin: 0;
@@ -603,6 +649,41 @@ body.page {
 .folder-toggle:hover {
     color: var(--sl-color-text);
     background: rgba(33, 34, 38, 0.04);
+}
+
+/* Section row: chevron toggles, label navigates to the section index. */
+.folder-row {
+    display: flex;
+    align-items: center;
+    gap: 0.1rem;
+}
+
+.folder-row > .folder-toggle {
+    flex: 0 0 auto;
+    width: 1.5rem;
+    padding: 0.2em 0;
+    justify-content: center;
+}
+
+.folder-link {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: 0.2em 0.5rem 0.2em 0;
+    font-family: var(--sl-font);
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--sl-color-gray-2);
+    text-decoration: none;
+    border-radius: 0.25rem;
+}
+
+.folder-link:hover {
+    color: var(--sl-color-text);
+}
+
+.folder-link.active {
+    color: var(--sl-color-accent);
 }
 
 :root[data-theme='dark'] .folder-toggle:hover {
